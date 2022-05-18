@@ -2,7 +2,7 @@ import './index.less'
 import List from 'rc-virtual-list'
 import { useMemo } from 'react'
 
-import useVistBoxHeight from '@/hook/useVistBoxHeight'
+import useVirtualBoxHeight from './hook/useVirtualBoxHeight'
 
 export default () => {
 
@@ -17,7 +17,7 @@ export default () => {
     return list
   }, [])
 
-  const height = useVistBoxHeight()
+  const height = useVirtualBoxHeight()
   console.log(height)
 
   return (

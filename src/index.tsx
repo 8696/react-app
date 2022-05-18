@@ -1,6 +1,5 @@
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
-import 'modern-normalize/modern-normalize.css'
 import './index.less'
 
 import App from './App'

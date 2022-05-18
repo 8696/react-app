@@ -19,7 +19,8 @@
     "eslint": "cross-env NODE_ENV=production eslint --fix ./src",
     "prepare": "husky install",
     "preview": "serve -s -u ./build",
-    "git:commit": "yarn eslint && git add . && git commit -m \"feat: none\" && git push origin master"
+    "git:commit": "yarn eslint && git add . && git commit -m \"feat: git:commit\" && git push origin master",
+    "init": "rm -rf ./node_modules && rm -rf build && rm -rf coverage && yarn"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "yarn eslint"
