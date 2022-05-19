@@ -5,11 +5,13 @@
   "license": "MIT",
   "scripts": {
     "start:development": "cross-env CUSTOM_ENV=development node scripts/start.js",
-    "start:test": "cross-env CUSTOM_ENV=test node scripts/start.js",
-    "start:production": "cross-env CUSTOM_ENV=production node scripts/start.js",
     "build:development": "yarn eslint && cross-env CUSTOM_ENV=development node scripts/build.js",
+    "start:test": "cross-env CUSTOM_ENV=test node scripts/start.js",
     "build:test": "yarn eslint && cross-env CUSTOM_ENV=test node scripts/build.js",
+    "start:production": "cross-env CUSTOM_ENV=production node scripts/start.js",
     "build:production": "yarn eslint && cross-env CUSTOM_ENV=production node scripts/build.js",
+    "start:beta": "cross-env CUSTOM_ENV=beta node scripts/start.js",
+    "build:beta": "yarn eslint && cross-env CUSTOM_ENV=beta node scripts/build.js",
     "clear:webpackCache": "rimraf ./node_modules/.cache",
     "clear:buildDist": "rimraf ./build",
     "test": "jest --config ./jest.config.ts",
@@ -17,8 +19,9 @@
     "prepare": "husky install",
     "preview": "serve -s -u ./build",
     "git:commit": "yarn eslint && git add . && git commit -m \"feat: git:commit\" && git push origin master",
-    "i": "rm -rf ./node_modules && rm -rf build && rm -rf coverage && yarn",
-    "update:lock": "rm -rf ./yarn.lock && yarn i"
+    "update:lock": "rm -rf ./yarn.lock && yarn init:package",
+    "init:package": "rm -rf ./node_modules && rm -rf build && rm -rf coverage && yarn",
+    "init:cusenv": "node ./scripts/customEnv.js"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "yarn eslint"

@@ -21,25 +21,29 @@ const envCustomValue = {
   REACT_APP_CUSTOM_ENV: [
     'development',
     'test',
-    'production'
+    'production',
+    'beta'
   ],
   /** 生成 sourcemap */
   GENERATE_SOURCEMAP: [
     'true',
     'true',
+    'false',
     'false'
   ],
   /** 删除所有 console */
   DROP_CONSOLE: [
     'false',
     'false',
-    'true'
+    'true',
+    'false'
   ],
   /** 请求地址 */
   REACT_APP_URL_API: [
     'http://development.com',
     'http://test.com',
-    'http://production.com'
+    'http://production.com',
+    'http://beta.com'
   ]
 }
 
@@ -52,11 +56,41 @@ const mkdirContent = (envIndex) => {
 }
 
 ;(async function() {
+  // 删除 .env.custom.xx 文件
+  const rootPathFileList = require('fs').readdirSync(path.resolve(__dirname, '../'))
+  for (let i = 0; i < rootPathFileList.length; i++) {
+    const file = rootPathFileList[i]
+    if (/\.env\.custom\./.test(file)) {
+      await fs.remove(path.resolve(__dirname, `../${file}`))
+    }
+  }
+  // 删除 package.json > scripts > start | build 开头的脚本
+  Object.keys(packageData.scripts).forEach(key => {
+    if (/start:/.test(key) || /build:/.test(key)) {
+      delete packageData.scripts[key]
+    }
+  })
+
+  const scripts = {}
   for (let i = 0; i < envCustomList.length; i++) {
+    // 刷入 env 文件
     const envCustomItem = envCustomList[i]
     await fs.outputFile(path.resolve(__dirname, `../.env.custom.${envCustomItem}`), mkdirContent(i))
+    // 暂存 script
+    scripts[`start:${envCustomItem}`]
+      = `cross-env CUSTOM_ENV=${envCustomItem} node scripts/start.js`
+    scripts[`build:${envCustomItem}`]
+      = `yarn eslint && cross-env CUSTOM_ENV=${envCustomItem} node scripts/build.js`
   }
-  console.log(packageData)
+  // 刷入 script
+  packageData.scripts = {
+    ...scripts,
+    ...packageData.scripts
+  }
+  await fs.outputFile(
+    path.resolve(__dirname, '../package.json'),
+    JSON.stringify(packageData, null, '  ')
+  )
 }())
 
 
