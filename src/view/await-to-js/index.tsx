@@ -20,7 +20,7 @@ export default () => {
           if (!err) {
             return console.log('fulfilled, res:', data)
           }
-          console.log(err)
+          console.warn(err)
         }}
       >getUserinfo</Button>
     </div>

@@ -57,7 +57,6 @@ const imageInlineSizeLimit = parseInt(
 
 // Check if TypeScript is setup
 const useTypeScript = fs.existsSync(paths.appTsConfig)
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 // Check if Tailwind config exists
 const useTailwind = fs.existsSync(
   path.join(paths.appPath, 'tailwind.config.js')
@@ -270,7 +269,11 @@ module.exports = (webpackEnv) => {
               // https://github.com/facebook/create-react-app/issues/5250
               // Pending further investigation:
               // https://github.com/terser-js/terser/issues/120
-              inline: 2
+              inline: 2,
+              // 构建环境删除 debugger
+              drop_debugger: isEnvProduction,
+              // 删除所有的 console
+              drop_console: isEnvProduction && process.env.DROP_CONSOLE === 'true'
             },
             mangle: {
               safari10: true
@@ -349,7 +352,6 @@ module.exports = (webpackEnv) => {
           // match the requirements. When no loader matches it will fall
           // back to the "file" loader at the end of the loader list.
           oneOf: [
-            // TODO: Merge this config once `image/avif` is in the mime-db
             // https://github.com/jshttp/mime-db
             {
               test: [/\.avif$/],
@@ -771,16 +773,6 @@ module.exports = (webpackEnv) => {
               ...(!hasJsxRuntime && {
                 'react/react-in-jsx-scope': 'error'
               })
-            }
-          }
-        }),
-      // 移除 console
-      process.env.DISABLE_CONSOLE === 'true'
-        && process.env.GENERATE_SOURCEMAP === 'false'
-        && new UglifyJsPlugin({
-          uglifyOptions: {
-            compress: {
-              drop_console: true
             }
           }
         }),
