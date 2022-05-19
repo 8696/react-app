@@ -1,10 +1,12 @@
 import ReactDOM from 'react-dom'
+import React from 'react'
+
 import reportWebVitals from './reportWebVitals'
 import './index.less'
 
-import App from './App'
+const App = React.lazy(() => import('./App'))
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<React.Suspense fallback='loading...'><App /></React.Suspense>, document.getElementById('root'))
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
