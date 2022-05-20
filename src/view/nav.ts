@@ -10,5 +10,7 @@ export default [
   { name: 'scroll', link: '/scroll', C: React.lazy(() => import('@/view/scroll')) },
   { name: 'useRequest', link: '/useRequest', C: React.lazy(() => import('@/view/useRequest')) },
   { name: 'await-to-js', link: '/await-to-js', C: React.lazy(() => import('@/view/await-to-js')) },
-  { name: 'svg', link: '/svg', C: React.lazy(() => import('@/view/svg')) }
+  { name: 'svg', link: '/svg', C: React.lazy(() => import('@/view/svg')) },
+  { name: 'axios-mock-adapter', link: '/axios-mock-adapter', C: React.lazy(() => import('@/view/axios-mock-adapter')) },
+  { name: 'axios-adapter', link: '/axios-adapter', C: React.lazy(() => import('@/view/axios-adapter')) }
 ]
