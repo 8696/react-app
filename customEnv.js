@@ -1,6 +1,6 @@
 const fs = require('fs-extra')
 const path = require('path')
-const packageData = require('../package.json')
+const packageData = require('./package.json')
 
 /**
  * 自定义环境列表
@@ -57,11 +57,11 @@ const mkdirContent = (envIndex) => {
 
 ;(async function() {
   // 删除 .env.custom.xx 文件
-  const rootPathFileList = require('fs').readdirSync(path.resolve(__dirname, '../'))
+  const rootPathFileList = require('fs').readdirSync(path.resolve(__dirname, './'))
   for (let i = 0; i < rootPathFileList.length; i++) {
     const file = rootPathFileList[i]
     if (/\.env\.custom\./.test(file)) {
-      await fs.remove(path.resolve(__dirname, `../${file}`))
+      await fs.remove(path.resolve(__dirname, `./${file}`))
     }
   }
   // 删除 package.json > scripts > start | build 开头的脚本
@@ -75,7 +75,7 @@ const mkdirContent = (envIndex) => {
   for (let i = 0; i < envCustomList.length; i++) {
     // 刷入 env 文件
     const envCustomItem = envCustomList[i]
-    await fs.outputFile(path.resolve(__dirname, `../.env.custom.${envCustomItem}`), mkdirContent(i))
+    await fs.outputFile(path.resolve(__dirname, `./.env.custom.${envCustomItem}`), mkdirContent(i))
     // 暂存 script
     scripts[`start:${envCustomItem}`]
       = `cross-env CUSTOM_ENV=${envCustomItem} node scripts/start.js`
@@ -88,7 +88,7 @@ const mkdirContent = (envIndex) => {
     ...packageData.scripts
   }
   await fs.outputFile(
-    path.resolve(__dirname, '../package.json'),
+    path.resolve(__dirname, './package.json'),
     JSON.stringify(packageData, null, '  ')
   )
 }())
