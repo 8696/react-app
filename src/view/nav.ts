@@ -12,5 +12,6 @@ export default [
   { name: 'await-to-js', link: '/await-to-js', C: React.lazy(() => import('@/view/await-to-js')) },
   { name: 'svg', link: '/svg', C: React.lazy(() => import('@/view/svg')) },
   { name: 'axios-mock-adapter', link: '/axios-mock-adapter', C: React.lazy(() => import('@/view/axios-mock-adapter')) },
-  { name: 'axios-adapter', link: '/axios-adapter', C: React.lazy(() => import('@/view/axios-adapter')) }
+  { name: 'axios-adapter', link: '/axios-adapter', C: React.lazy(() => import('@/view/axios-adapter')) },
+  { name: 'table-pagination', link: '/table-pagination', C: React.lazy(() => import('@/view/table-pagination')) }
 ]
