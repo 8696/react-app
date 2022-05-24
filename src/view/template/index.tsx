@@ -1,9 +1,9 @@
 import './index.less'
-export default () => {
 
+export default () => {
   return (
     <>
-      <span>template</span>
+      <div>template</div>
     </>
   )
 }
