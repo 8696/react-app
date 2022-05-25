@@ -129,6 +129,7 @@
     "sass-loader": "^10.0.5",
     "semver": "7.3.2",
     "serve": "^13.0.2",
+    "simple-hashtable": "^1.0.1",
     "source-map-loader": "^3.0.0",
     "style-loader": "^3.3.1",
     "tailwindcss": "^3.0.2",

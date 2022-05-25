@@ -7641,6 +7641,16 @@ lodash.get@^4:
   resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
   integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
 
+lodash.includes@4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/lodash.includes/-/lodash.includes-4.3.0.tgz#60bb98a87cb923c68ca1e51325483314849f553f"
+  integrity sha1-YLuYqHy5I8aMoeUTJUgzFISfVT8=
+
+lodash.isequal@4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+  integrity sha1-QVxEePK8wwEgwizhDtMib30+GOA=
+
 lodash.memoize@4.x, lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
@@ -10920,6 +10930,22 @@ signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3, signal-exit@^3.0.7:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
+
+simple-hashtable@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/simple-hashtable/-/simple-hashtable-1.0.1.tgz#c5d55a410f1ec3d28d4f53e6004129c379e84d96"
+  integrity sha512-zQDuJocUVRqqfdlaEtoV4LD1NnCKuZxbh3Pp93NrxFScXqR32IsYuolo+tVyg6W1S1Z0rXfNqjlp+L+4/1/QuA==
+  dependencies:
+    lodash.includes "4.3.0"
+    lodash.isequal "4.5.0"
+    singly-linked-list "1.4.1"
+
+singly-linked-list@1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/singly-linked-list/-/singly-linked-list-1.4.1.tgz#f53b57b4dc6e120e8313ae16614bf3c383073b4b"
+  integrity sha512-ELPCUOXWiqTdHc2FSmnvYfA0UjqVJVm2UZ4VMX0boWjWxdN8MVfr3iS1ALeJMcOuFkt4FwNXii4rsN9+LoWmrw==
+  dependencies:
+    lodash.isequal "4.5.0"
 
 sisteransi@^1.0.5:
   version "1.0.5"
