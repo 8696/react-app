@@ -7,7 +7,6 @@ export default [
   { name: 'virtual', link: '/virtual', C: React.lazy(() => import('@/view/virtual')) },
   { name: 'md', link: '/md', C: React.lazy(() => import('@/view/md')) },
   { name: 'env', link: '/env', C: React.lazy(() => import('@/view/env')) },
-  { name: 'scroll', link: '/scroll', C: React.lazy(() => import('@/view/scroll')) },
   { name: 'useRequest', link: '/useRequest', C: React.lazy(() => import('@/view/useRequest')) },
   { name: 'await-to-js', link: '/await-to-js', C: React.lazy(() => import('@/view/await-to-js')) },
   { name: 'svg', link: '/svg', C: React.lazy(() => import('@/view/svg')) },
