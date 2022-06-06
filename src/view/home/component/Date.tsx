@@ -1,9 +1,9 @@
 import { DatePicker } from 'antd'
-const A: any = DatePicker
+
 export default () => {
   return (
     <>
-      <A
+      <DatePicker
         renderExtraFooter={() => {
           return <span>不限</span>
         }}

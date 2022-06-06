@@ -16,7 +16,7 @@ export default () => {
           </Fragment>
         ))}
       </div>
-      <React.Suspense fallback={<></>}>
+      <React.Suspense fallback={<>loading...</>}>
         <Switch>
           {nav.map(item => (
             <Route key={item.link} exact path={item.link} component={item.C} />
