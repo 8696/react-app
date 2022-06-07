@@ -10,7 +10,7 @@ const root = createRoot(document.getElementById('root') as HTMLElement)
 
 const App = React.lazy(() => import('./App'))
 
-root.render(<React.Suspense fallback='loading...'><App /></React.Suspense>)
+root.render(<React.Suspense fallback={<></>}><App /></React.Suspense>)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

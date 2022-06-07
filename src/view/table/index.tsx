@@ -38,18 +38,16 @@ export default () => {
   const [keyWork, setKeyWork] = useState<string>('')
 
   return (
-    <>
-      <div style={{ width: 800, margin: '0 auto', marginTop: 250 }}>
-        <Table
-          style={{ width: '100%' }}
-          scroll={{ x: 1200 }}
-          dataSource={dataSource}
-          bordered
-          columns={columns}
-          rowKey={() => Math.random()}
-        />
-      </div>
-      <div style={{ width: 800, margin: '0 auto' }}>
+    <div style={{ padding: 20 }}>
+      <Table
+        style={{ width: '100%' }}
+        scroll={{ x: 1200 }}
+        dataSource={dataSource}
+        bordered
+        columns={columns}
+        rowKey={() => Math.random()}
+      />
+      <div>
         <Input onChange={e => {
           setKeyWork(e.target.value)
         }} style={{ width: 300 }} />
@@ -59,6 +57,6 @@ export default () => {
           setDataSource([...dataSource])
         }}>Change</Button>
       </div>
-    </>
+    </div>
   )
 }
