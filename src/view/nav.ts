@@ -14,5 +14,6 @@ export default [
   { name: 'axios-adapter', link: '/axios-adapter', C: React.lazy(() => import('@/view/axios-adapter')) },
   { name: 'table-pagination', link: '/table-pagination', C: React.lazy(() => import('@/view/table-pagination')) },
   { name: 'find-array', link: '/find-array', C: React.lazy(() => import('@/view/find-array')) },
-  { name: 'http-proxy', link: '/http-proxy', C: React.lazy(() => import('@/view/http-proxy')) }
+  { name: 'http-proxy', link: '/http-proxy', C: React.lazy(() => import('@/view/http-proxy')) },
+  { name: 'change-tab', link: '/change-tab', C: React.lazy(() => import('@/view/change-tab')) }
 ]
