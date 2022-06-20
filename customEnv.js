@@ -9,7 +9,6 @@ const envCustomList = [
   'development',
   'test',
   'production',
-  'beta'
 ]
 /**
  * 自定义 ENV 值：
@@ -22,28 +21,24 @@ const envCustomValue = {
     'development',
     'test',
     'production',
-    'beta'
   ],
   /** 生成 sourcemap */
   GENERATE_SOURCEMAP: [
     'true',
     'true',
     'false',
-    'false'
   ],
   /** 删除所有 console */
   DROP_CONSOLE: [
     'false',
     'false',
     'true',
-    'false'
   ],
   /** 请求地址 */
   REACT_APP_URL_API: [
     'http://development.com',
     'http://test.com',
     'http://production.com',
-    'http://beta.com'
   ]
 }
 
