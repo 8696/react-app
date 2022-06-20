@@ -10,8 +10,6 @@
     "build:test": "yarn eslint && cross-env CUSTOM_ENV=test node scripts/build.js",
     "start:production": "cross-env CUSTOM_ENV=production node scripts/start.js",
     "build:production": "yarn eslint && cross-env CUSTOM_ENV=production node scripts/build.js",
-    "start:beta": "cross-env CUSTOM_ENV=beta node scripts/start.js",
-    "build:beta": "yarn eslint && cross-env CUSTOM_ENV=beta node scripts/build.js",
     "clear:webpackCache": "rimraf ./node_modules/.cache",
     "clear:buildDist": "rimraf ./build",
     "test": "jest --config ./jest.config.ts",

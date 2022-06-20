@@ -20,32 +20,32 @@ const envCustomValue = {
   REACT_APP_CUSTOM_ENV: [
     'development',
     'test',
-    'production',
+    'production'
   ],
   /** 生成 sourcemap */
   GENERATE_SOURCEMAP: [
     'true',
     'true',
-    'false',
+    'false'
   ],
   /** 删除所有 console */
   DROP_CONSOLE: [
     'false',
     'false',
-    'true',
+    'true'
   ],
   /** 请求地址 */
   REACT_APP_URL_API: [
     'http://development.com',
     'http://test.com',
-    'http://production.com',
+    'http://production.com'
   ]
 }
 
 const mkdirContent = (envIndex) => {
   let value = ''
   Object.keys(envCustomValue).forEach(key => {
-    value += key + ' = ' + (envCustomValue[key][envIndex] || 'null') + '\r\n'
+    value += key + '=' + (envCustomValue[key][envIndex] || 'null') + '\r\n'
   })
   return value
 }
