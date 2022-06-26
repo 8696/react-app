@@ -10,16 +10,13 @@
     "build:test": "yarn eslint && cross-env CUSTOM_ENV=test node scripts/build.js",
     "start:production": "cross-env CUSTOM_ENV=production node scripts/start.js",
     "build:production": "yarn eslint && cross-env CUSTOM_ENV=production node scripts/build.js",
-    "clear:webpackCache": "rimraf ./node_modules/.cache",
-    "clear:buildDist": "rimraf ./build",
     "test": "jest --config ./jest.config.ts",
     "eslint": "cross-env NODE_ENV=production eslint --fix ./src",
     "prepare": "husky install",
     "preview": "serve -s -u ./build",
     "git:commit": "yarn eslint && git add . && git commit -m \"feat: git:commit\" && git push origin master",
-    "update:lock": "rm -rf ./yarn.lock && yarn init:package",
-    "init:package": "rm -rf ./node_modules && rm -rf build && rm -rf coverage && yarn",
-    "init:cusenv": "node ./scripts/customEnv.js"
+    "clear:package": "rm -rf ./node_modules && rm -rf build && rm -rf coverage",
+    "init:cusenv": "node ./customEnv.js"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "yarn eslint"
@@ -43,9 +40,9 @@
     ]
   },
   "dependencies": {
-    "@babel/core": "7.18.5",
-    "@commitlint/cli": "^17.0.2",
-    "@commitlint/config-conventional": "^17.0.2",
+    "@babel/core": "^7.18.5",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@svgr/webpack": "^6.2.1",
     "@testing-library/jest-dom": "^5.16.4",
@@ -99,7 +96,6 @@
     "react-router-dom": "^5.3.3",
     "resolve": "1.22.0",
     "resolve-url-loader": "^3.1.2",
-    "rimraf": "^3.0.2",
     "sass": "^1.43.5",
     "sass-loader": "^10.0.5",
     "semver": "7.3.2",

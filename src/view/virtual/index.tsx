@@ -36,9 +36,9 @@ export default () => {
                       {item.time}
                     </div>
                     <div style={{ height: 30 }}>
-                      <img style={{ height: '100%' }} src='http://asset.icode.link/test/u%3D1557229360%2C443641844%26fm%3D193%26f%3DGIF.jpeg' alt=''/>
-                      <img style={{ height: '100%' }} src='http://asset.icode.link/test/u%3D4240641596%2C3235181048%26fm%3D193%26f%3DGIF.jpeg' alt=''/>
-                      <img style={{ height: '100%' }} src='https://t7.baidu.com/it/u=805456074,3405546217&fm=193&f=GIF' alt=''/>
+                      <img style={{ height: '100%' }} src='https://private-oss-gz-020.oss-cn-guangzhou.aliyuncs.com/cli/upload/Users/i2022/Desktop/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/1.jpeg' alt=''/>
+                      <img style={{ height: '100%' }} src='https://private-oss-gz-020.oss-cn-guangzhou.aliyuncs.com/cli/upload/Users/i2022/Desktop/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/60265eca0b17aaf3a313698573959712.jpeg' alt=''/>
+                      <img style={{ height: '100%' }} src='https://private-oss-gz-020.oss-cn-guangzhou.aliyuncs.com/cli/upload/Users/i2022/Desktop/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/f1334f9a60e2a2ed08161253b1214cec.jpeg' alt=''/>
                     </div>
                   </div>
                 </>
