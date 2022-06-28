@@ -6,7 +6,6 @@ export default () => {
   useMount(() => {
     const originAdapter = axios.defaults.adapter
     axios.defaults.adapter = (config: AxiosRequestConfig) => {
-
       return new Promise((resolve, reject) => {
         if (/A/.test(config.url as string)) {
           // originAdapter && originAdapter(config).then(resolve, reject)
@@ -15,8 +14,20 @@ export default () => {
           }, (error) => {
             reject(error)
           })
-        } else {
+        } else if (/B/.test(config.url as string)) {
           resolve({
+            data: {
+              code: 0
+            },
+            status: 500,
+            statusText: 'OK',
+            headers: {
+              custom: 'custom value'
+            },
+            config
+          })
+        } else if (/C/.test(config.url as string)) {
+          reject({
             data: {
               code: 0
             },
@@ -45,6 +56,8 @@ export default () => {
             console.log(err)
           })
       }}>request - A</Button>
+      &nbsp;
+      &nbsp;
       <Button onClick={() => {
         axios.get('/api/request-B')
           .then(log)
@@ -52,6 +65,15 @@ export default () => {
             console.log(err)
           })
       }}>request - B</Button>
+      &nbsp;
+      &nbsp;
+      <Button onClick={() => {
+        axios.get('/api/request-C')
+          .then(log)
+          .catch(err => {
+            console.log(err)
+          })
+      }}>request - C</Button>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import { Cascader, Button } from 'antd'
 import { useState } from 'react'
-
+import './cascader.less'
 
 export default () => {
 
@@ -278,7 +278,7 @@ export default () => {
   const [value, setValue] = useState<string[]>()
 
   return (
-    <>
+    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
       <Cascader
         options={options}
         value={value}
@@ -291,6 +291,6 @@ export default () => {
           setValue(undefined)
         }}>Clear
       </Button>
-    </>
+    </div>
   )
 }
