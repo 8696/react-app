@@ -16,6 +16,7 @@
     "preview": "serve -s -u ./build",
     "git:commit": "yarn eslint && git add . && git commit -m \"feat: git:commit\" && git push origin master",
     "clear:package": "rm -rf ./node_modules && rm -rf build && rm -rf coverage",
+    "clear:cache": "rm -rf ./node_modules/.cache",
     "init:cusenv": "node ./customEnv.js"
   },
   "lint-staged": {
@@ -115,6 +116,7 @@
     "workbox-webpack-plugin": "^6.4.1"
   },
   "devDependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@types/lodash": "^4.14.182",
     "@types/qs": "^6.9.7",
     "ahooks": "^3.5.0",

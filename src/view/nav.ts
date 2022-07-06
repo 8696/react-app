@@ -17,5 +17,6 @@ export default [
   { name: 'http-proxy', link: '/http-proxy', C: React.lazy(() => import('@/view/http-proxy')) },
   { name: 'change-tab', link: '/change-tab', C: React.lazy(() => import('@/view/change-tab')) },
   { name: 'modal', link: '/modal', C: React.lazy(() => import('@/view/modal')) },
-  { name: 'use-virtual-list', link: '/use-virtual-list', C: React.lazy(() => import('@/view/use-virtual-list')) }
+  { name: 'use-virtual-list', link: '/use-virtual-list', C: React.lazy(() => import('@/view/use-virtual-list')) },
+  { name: 'antd-icon', link: '/antd-icon', C: React.lazy(() => import('@/view/antd-icon')) }
 ]

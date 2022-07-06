@@ -5,12 +5,12 @@ export default () => {
   const containerRef = useRef(null)
   const wrapperRef = useRef(null)
 
-  const originalList = useMemo(() => Array.from(Array(999).keys()), [])
+  const originalList = useMemo(() => Array.from(Array(40).keys()), [])
 
   const [list] = useVirtualList(originalList, {
     containerTarget: containerRef,
     wrapperTarget: wrapperRef,
-    itemHeight: (i) => (i % 2 === 0 ? 42 + 8 : 84 + 8),
+    itemHeight: 80,
     overscan: 10
   })
 
@@ -21,12 +21,11 @@ export default () => {
           {list.map((ele) => (
             <div
               style={{
-                height: ele.index % 2 === 0 ? 42 : 84,
+                height: 80,
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                border: '1px solid #e8e8e8',
-                marginBottom: 8
+                border: '1px solid #e8e8e8'
               }}
               key={ele.index}
             >
