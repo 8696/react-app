@@ -10,12 +10,14 @@
     "build:test": "yarn eslint && cross-env CUSTOM_ENV=test node scripts/build.js",
     "start:production": "cross-env CUSTOM_ENV=production node scripts/start.js",
     "build:production": "yarn eslint && cross-env CUSTOM_ENV=production node scripts/build.js",
+    "analyze": "yarn clear:cache && yarn eslint && cross-env CUSTOM_ENV=production ANALYZE=true node scripts/build.js",
     "test": "jest --config ./jest.config.ts",
     "eslint": "cross-env NODE_ENV=production eslint --fix ./src",
     "prepare": "husky install",
     "preview": "serve -s -u ./build",
     "git:commit": "yarn eslint && git add . && git commit -m \"feat: git:commit\" && git push origin master",
     "clear:package": "rm -rf ./node_modules && rm -rf build && rm -rf coverage",
+    "init:package": "yarn clear:package && yarn",
     "clear:cache": "rm -rf ./node_modules/.cache",
     "init:cusenv": "node ./customEnv.js"
   },
@@ -111,6 +113,7 @@
     "url-loader": "4.1.1",
     "web-vitals": "^1.0.1",
     "webpack": "^5.73.0",
+    "webpack-bundle-analyzer": "^4.5.0",
     "webpack-dev-server": "^4.9.2",
     "webpack-manifest-plugin": "^4.1.1",
     "workbox-webpack-plugin": "^6.4.1"
