@@ -119,10 +119,6 @@ module.exports = (webpackEnv) => {
         options: cssOptions
       },
       {
-        loader: require.resolve('less-loader'),
-        options: preProcessor
-      },
-      {
         // Options for PostCSS as we reference these options twice
         // Adds vendor prefixing based on your specified browser support in
         // package.json
@@ -169,6 +165,17 @@ module.exports = (webpackEnv) => {
       }
     ].filter(Boolean)
     if (preProcessor) {
+      const options = {
+        sourceMap: true
+      }
+      if (preProcessor === 'less-loader') {
+        options.lessOptions = {
+          javascriptEnabled: true,
+          modifyVars: {
+            hack: 'true; @import "/src/style/antd-reset.less";'
+          }
+        }
+      }
       loaders.push(
         {
           loader: require.resolve('resolve-url-loader'),
@@ -179,9 +186,7 @@ module.exports = (webpackEnv) => {
         },
         {
           loader: require.resolve(preProcessor),
-          options: {
-            sourceMap: true
-          }
+          options
         }
       )
     }
