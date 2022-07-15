@@ -18,6 +18,7 @@
     "git:commit": "yarn eslint && git add . && git commit -m \"feat: git:commit\" && git push origin master",
     "clear:package": "rm -rf ./node_modules && rm -rf build && rm -rf coverage",
     "init:package": "yarn clear:package && yarn",
+    "update:package": "rm -rf ./yarn.lock && yarn init:package",
     "clear:cache": "rm -rf ./node_modules/.cache",
     "init:cusenv": "node ./customEnv.js"
   },
@@ -102,7 +103,7 @@
     "sass": "^1.43.5",
     "sass-loader": "^10.0.5",
     "semver": "7.3.2",
-    "serve": "^13.0.2",
+    "serve": "^14.0.1",
     "source-map-loader": "^3.0.0",
     "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^5.3.1",
@@ -122,27 +123,12 @@
     "@ant-design/icons": "^4.7.0",
     "@types/lodash": "^4.14.182",
     "@types/qs": "^6.9.7",
-    "ahooks": "^3.5.0",
-    "antd": "^4.21.3",
+    "ahooks": "^3.5.2",
+    "antd": "^4.21.6",
     "await-to-js": "^3.0.0",
     "axios": "^0.27.2",
-    "axios-mock-adapter": "^1.20.0",
+    "axios-mock-adapter": "^1.21.1",
     "lodash": "^4.17.21",
-    "qs": "^6.11.0",
-    "rc-virtual-list": "^3.4.8"
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ],
-    "plugins": [
-      [
-        "import",
-        {
-          "libraryName": "antd",
-          "style": true
-        }
-      ]
-    ]
+    "qs": "^6.11.0"
   }
 }
