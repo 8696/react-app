@@ -3,7 +3,6 @@ import style from './index.module.less'
 import scssStyle from './index.module.scss'
 import TreeSelect from './component/TreeSelect'
 import Cascader from './component/Cascader'
-import Date from './component/Date'
 
 export default () => {
 
@@ -13,8 +12,6 @@ export default () => {
       <TreeSelect />
       <h3 className={ `${scssStyle.title} ${style.title}` }>Cascader</h3>
       <Cascader />
-      <h3 className={ `${scssStyle.title} ${style.title}` }>Date</h3>
-      <Date />
     </div>
   )
 }
