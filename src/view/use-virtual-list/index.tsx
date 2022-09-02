@@ -10,22 +10,23 @@ export default () => {
   const [list] = useVirtualList(originalList, {
     containerTarget: containerRef,
     wrapperTarget: wrapperRef,
-    itemHeight: 80,
+    itemHeight: (i) => (i % 2 === 0 ? 42 + 8 : 84 + 8),
     overscan: 10
   })
 
   return (
     <div style={{ overflowAnchor: 'none' }}>
-      <div ref={containerRef} style={{ height: '800px', overflow: 'auto', overflowAnchor: 'none' }}>
+      <div ref={containerRef} style={{ height: '100vh', overflow: 'auto', overflowAnchor: 'none' }}>
         <div ref={wrapperRef}>
           {list.map((ele) => (
             <div
               style={{
-                height: 80,
+                height: ele.index % 2 === 0 ? 42 : 84,
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                border: '1px solid #e8e8e8'
+                border: '1px solid #e8e8e8',
+                marginBottom: 8
               }}
               key={ele.index}
             >
