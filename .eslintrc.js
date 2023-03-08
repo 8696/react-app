@@ -100,8 +100,8 @@ module.exports = {
     'no-eval': ['error'],
     // 禁止对原生对象或只读的全局对象进行赋值
     'no-global-assign': ['error'],
-    // 禁止重新声明变量
-    'no-redeclare': ['error', { builtinGlobals: true }],
+    // 禁止重新声明变量（关闭支持重载）
+    'no-redeclare': ['off', { builtinGlobals: true }],
     // 禁止自我赋值
     'no-self-assign': [
       'error',
