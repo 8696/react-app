@@ -13,7 +13,8 @@ export default () => {
     })
   })
   return (
-    <div style={{ padding: 20 }}>
+    <div className='m-view'>
+      <h3 className='m-title'>Await to js</h3>
       <Button
         onClick={async () => {
           const [err, data] = await awaitToJs(getUserinfo())
