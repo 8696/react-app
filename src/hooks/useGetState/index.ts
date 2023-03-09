@@ -7,7 +7,6 @@ import { useMemoizedFn } from 'ahooks'
 import type { Dispatch, SetStateAction } from 'react'
 type GetStateAction<T> = () => T;
 
-// eslint-disable-next-line no-unused-vars
 function useGetState<S>(initialState: S | (() => S)): [S, Dispatch<SetStateAction<S>>, GetStateAction<S>];
 
 function useGetState<S = undefined>(): [

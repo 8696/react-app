@@ -20,5 +20,5 @@ export default [
   { name: 'use-virtual-list', link: '/use-virtual-list', C: React.lazy(() => import('@/view/use-virtual-list')) },
   { name: 'antd-icon', link: '/antd-icon', C: React.lazy(() => import('@/view/antd-icon')) },
   { name: 'tailwind', link: '/tailwind', C: React.lazy(() => import('@/view/tailwind')) },
-  { name: 'ahooks', link: '/ahooks', C: React.lazy(() => import('@/view/ahooks')) }
+  { name: 'hooks', link: '/hooks', C: React.lazy(() => import('@/view/hooks')) }
 ]

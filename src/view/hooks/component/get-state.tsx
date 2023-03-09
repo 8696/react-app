@@ -50,15 +50,18 @@ export default () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log('interval count 1', JSON.stringify(state))
-      console.log('interval count 2', JSON.stringify(getState()))
-    }, 1000)
+      // console.log('interval count 1', JSON.stringify(state))
+      // console.log('interval count 2', JSON.stringify(getState()))
+    }, 3000)
     return () => {
       clearInterval(interval)
     }
   }, [])
 
   return (
-    <Button onClick={change}>change{state?.a}</Button>
+    <>
+      <h4>state value: {state?.a || 'null'}</h4>
+      <Button onClick={change}>change</Button>
+    </>
   )
 }
