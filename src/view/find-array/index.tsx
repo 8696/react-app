@@ -35,7 +35,8 @@ export default () => {
   }, [map, object])
 
   return (
-    <div style={{ padding: 20 }}>
+    <div className='m-view'>
+      <h1 className='m-title'>Find array</h1>
       <Button
         onClick={() => {
           const t = new Date().getTime()
@@ -52,6 +53,7 @@ export default () => {
           console.log(new Date().getTime() - t)
         }}
       >array</Button>
+      &nbsp;
       <Button
         onClick={() => {
           const t = new Date().getTime()
@@ -66,6 +68,7 @@ export default () => {
           console.log(new Date().getTime() - t)
         }}
       >object</Button>
+      &nbsp;
       <Button
         onClick={() => {
           const t = new Date().getTime()

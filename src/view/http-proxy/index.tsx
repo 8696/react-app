@@ -7,7 +7,8 @@ export default () => {
   const [path, setPath] = useState<string>('/url')
   const [loading, setLoading] = useState(false)
   return (
-    <div style={{ padding: 20 }}>
+    <div className='m-view'>
+      <h3 className='m-title'>Http proxy</h3>
       <Input.Group compact>
         <Input
           style={{ width: 300 }}
