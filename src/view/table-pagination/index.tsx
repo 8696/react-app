@@ -27,7 +27,8 @@ export default () => {
     })
   }, [])
   return (
-    <div style={{ padding: 20 }}>
+    <div className='m-view'>
+      <h3 className='m-title'>Table pagination</h3>
       <Table
         columns={columns}
         key='key'

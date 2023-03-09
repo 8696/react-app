@@ -38,7 +38,8 @@ export default () => {
   const [keyWork, setKeyWork] = useState<string>('')
 
   return (
-    <div style={{ padding: 20 }}>
+    <div className='m-view'>
+      <h3 className='m-title'>Change row</h3>
       <Table
         style={{ width: '100%' }}
         scroll={{ x: 1200 }}
@@ -51,6 +52,7 @@ export default () => {
         <Input onChange={e => {
           setKeyWork(e.target.value)
         }} style={{ width: 300 }} />
+        &nbsp;
         <Button onClick={() => {
           dataSource[0].name = keyWork
           console.log(JSON.stringify([...dataSource], null, '  '))

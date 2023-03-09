@@ -6,7 +6,7 @@ import Theme from './component/theme'
 
 export default () => {
   return (
-    <div style={{ padding: 20 }}>
+    <div className='m-view'>
       <div className={`tailwind-title ${style.tailwindTitleM}`}>box sizing</div>
       <BoxSizing />
       <div className={`tailwind-title ${style.tailwindTitleM}`}>display</div>
