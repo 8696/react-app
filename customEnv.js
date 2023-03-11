@@ -75,7 +75,7 @@ const mkdirContent = (envIndex) => {
     scripts[`start:${envCustomItem}`]
       = `cross-env CUSTOM_ENV=${envCustomItem} node scripts/start.js`
     scripts[`build:${envCustomItem}`]
-      = `yarn eslint && cross-env CUSTOM_ENV=${envCustomItem} node scripts/build.js`
+      = `pnpm run eslint && cross-env CUSTOM_ENV=${envCustomItem} node scripts/build.js`
   }
   // 刷入 script
   packageData.scripts = {
