@@ -5,27 +5,26 @@
   "license": "MIT",
   "scripts": {
     "start:development": "cross-env CUSTOM_ENV=development node scripts/start.js",
-    "build:development": "yarn eslint && cross-env CUSTOM_ENV=development node scripts/build.js",
+    "build:development": "pnpm run eslint && cross-env CUSTOM_ENV=development node scripts/build.js",
     "start:test": "cross-env CUSTOM_ENV=test node scripts/start.js",
-    "build:test": "yarn eslint && cross-env CUSTOM_ENV=test node scripts/build.js",
+    "build:test": "pnpm run eslint && cross-env CUSTOM_ENV=test node scripts/build.js",
     "start:production": "cross-env CUSTOM_ENV=production node scripts/start.js",
-    "build:production": "yarn eslint && cross-env CUSTOM_ENV=production node scripts/build.js",
-    "analyze": "yarn clear:cache && yarn eslint && cross-env CUSTOM_ENV=production ANALYZE=true node scripts/build.js",
+    "build:production": "pnpm run eslint && cross-env CUSTOM_ENV=production node scripts/build.js",
+    "analyze": "pnpm run clear:cache && pnpm run eslint && cross-env CUSTOM_ENV=production ANALYZE=true node scripts/build.js",
     "test": "jest --config ./jest.config.ts",
     "eslint": "cross-env NODE_ENV=production eslint --fix ./src",
     "prepare": "husky install",
     "preview": "serve -s -u ./build",
-    "git:commit": "yarn eslint && git add . && git commit -m \"feat: git:commit\" && git push origin master",
+    "git:commit": "pnpm run eslint && git add . && git commit -m \"feat: git:commit\" && git push origin master",
     "clear:package": "rm -rf ./node_modules && rm -rf build && rm -rf coverage",
-    "init:package": "yarn clear:package && yarn",
-    "update:package": "rm -rf ./yarn.lock && yarn init:package",
+    "init:package": "pnpm run clear:package && pnpm install",
     "clear:cache": "rm -rf ./node_modules/.cache",
     "init:cusenv": "node ./customEnv.js",
     "ncu:check": "ncu --target minor",
     "ncu:update": "ncu --target minor -u"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": "yarn eslint"
+    "src/**/*.{js,jsx,ts,tsx}": "pnpm run eslint"
   },
   "eslintConfig": {
     "extends": [
@@ -59,6 +58,7 @@
     "@types/react": "^17.0.53",
     "@types/react-dom": "^17.0.19",
     "@types/react-router-dom": "^5.3.3",
+    "@types/react-router": "^5.1.20",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
     "autoprefixer": "^10.4.13",
@@ -96,10 +96,12 @@
     "postcss-normalize": "^10.0.1",
     "postcss-preset-env": "^7.8.3",
     "progress-webpack-plugin": "^1.0.16",
+    "rc-virtual-list": "^3.4.13",
     "react": "^17.0.2",
     "react-dev-utils": "^12.0.1",
     "react-dom": "^17.0.2",
     "react-refresh": "^0.14.0",
+    "react-router": "^5.3.4",
     "react-router-dom": "^5.3.4",
     "resolve": "1.22.1",
     "resolve-url-loader": "^3.1.5",
@@ -134,5 +136,10 @@
     "lodash": "^4.17.21",
     "qs": "^6.11.0",
     "tailwindcss": "^3.2.7"
-  }
+  },
+  "engines": {
+    "node": ">=14.18.0",
+    "pnpm": ">=7.10.0"
+  },
+  "packageManager": "pnpm@7.10.0"
 }
