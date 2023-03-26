@@ -14,7 +14,7 @@ export default () => {
       <React.Suspense fallback={<></>}>
         <Switch>
           {nav.map(item => (
-            <Route key={item.link} exact path={item.link} component={item.C} />
+            <Route key={item.link} path={item.link} component={item.C} />
           ))}
           <Route exact path='*' render={() => <Redirect to='/404' />} />
         </Switch>

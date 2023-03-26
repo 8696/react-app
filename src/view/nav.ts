@@ -21,5 +21,6 @@ export default [
   { name: 'antd-icon', link: '/antd-icon', C: React.lazy(() => import('@/view/antd-icon')) },
   { name: 'tailwind', link: '/tailwind', C: React.lazy(() => import('@/view/tailwind')) },
   { name: 'hooks', link: '/hooks', C: React.lazy(() => import('@/view/hooks')) },
-  { name: 'css-module', link: '/css-module', C: React.lazy(() => import('@/view/css-module')) }
+  { name: 'css-module', link: '/css-module', C: React.lazy(() => import('@/view/css-module')) },
+  { name: 'router', link: '/router', C: React.lazy(() => import('@/view/router')) }
 ]
