@@ -22,5 +22,6 @@ export default [
   { name: 'tailwind', link: '/tailwind', C: React.lazy(() => import('@/view/tailwind')) },
   { name: 'hooks', link: '/hooks', C: React.lazy(() => import('@/view/hooks')) },
   { name: 'css-module', link: '/css-module', C: React.lazy(() => import('@/view/css-module')) },
-  { name: 'router', link: '/router', C: React.lazy(() => import('@/view/router')) }
+  { name: 'router', link: '/router', C: React.lazy(() => import('@/view/router')) },
+  { name: 'state-render', link: '/state-render', C: React.lazy(() => import('@/view/state-render')) }
 ]
