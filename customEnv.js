@@ -8,7 +8,7 @@ const packageData = require('./package.json')
 const envCustomList = [
   'development',
   'test',
-  'production',
+  'production'
 ]
 /**
  * 自定义 ENV 值：
@@ -16,36 +16,53 @@ const envCustomList = [
  * 2、数组索引对应的自定义环境列表
  * */
 const envCustomValue = {
-  /** 自定义环境 */
-  REACT_APP_CUSTOM_ENV: [
-    'development',
-    'test',
-    'production'
-  ],
-  /** 生成 sourcemap */
-  GENERATE_SOURCEMAP: [
-    'true',
-    'true',
-    'false'
-  ],
-  /** 删除所有 console */
-  DROP_CONSOLE: [
-    'false',
-    'false',
-    'true'
-  ],
-  /** 请求地址 */
-  REACT_APP_URL_API: [
-    'http://development.com',
-    'http://test.com',
-    'http://production.com'
-  ]
+  REACT_APP_CURRENT_ENV_FILE: {
+    comment: '当前运行使用env文件名称',
+    values: [
+      '.env.custom.development',
+      '.env.custom.beta',
+      '.env.custom.production'
+    ]
+  },
+  REACT_APP_CUSTOM_ENV: {
+    comment: '自定义环境',
+    values: [
+      'development',
+      'test',
+      'production'
+    ]
+  },
+  GENERATE_SOURCEMAP: {
+    comment: '是否生成 sourcemap',
+    values: [
+      'true',
+      'true',
+      'false'
+    ]
+  },
+  DROP_CONSOLE: {
+    comment: '是否删除所有 console',
+    values: [
+      'false',
+      'false',
+      'true'
+    ]
+  },
+  REACT_APP_URL_API: {
+    comment: '请求地址',
+    values: [
+      'http://development.com',
+      'http://test.com',
+      'http://production.com'
+    ]
+  }
 }
 
 const mkdirContent = (envIndex) => {
   let value = ''
   Object.keys(envCustomValue).forEach(key => {
-    value += key + '=' + (envCustomValue[key][envIndex] || 'null') + '\r\n'
+    value += '# ' + envCustomValue[key].comment + '\r\n'
+    value += key + '=' + (envCustomValue[key].values[envIndex] || 'null') + '\r\n\r\n'
   })
   return value
 }
