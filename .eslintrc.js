@@ -188,9 +188,7 @@ module.exports = {
     // 禁用 tab
     'no-tabs': ['error'],
     // 禁用行尾空白
-    'no-trailing-spaces': isEnvProduction
-      ? ['error', { skipBlankLines: false, ignoreComments: false }]
-      : ['warn'],
+    'no-trailing-spaces': 'off',
     // 禁止属性前有空白
     'no-whitespace-before-property': ['error'],
     // 强制单个语句的位置

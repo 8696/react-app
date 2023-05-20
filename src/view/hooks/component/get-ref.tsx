@@ -5,32 +5,36 @@ import { useUpdate } from 'ahooks'
 
 export default () => {
 
-  const [ref, setRef, getRef] = useGetRef<{a: string}>({
-    a: 'init'
+  const [ref, setRef, getRef] = useGetRef<{value: string}>({
+    value: 'init'
   })
+
 
   const change = () => {
     const a = Math.random().toString()
-    console.log(a)
+    console.log(a, '即将设置的值a')
     setRef({
-      a
+      value: a
     })
-    console.log(JSON.stringify(getRef()))
+    console.log(getRef().value, '获取刚刚设置的值a')
 
+    //
     const b = Math.random().toString()
-    console.log(b)
+    console.log(b, '即将设置的值b')
     setRef({
-      a: b
+      value: b
     })
-    console.log(JSON.stringify(getRef()))
+    console.log(getRef().value, '获取刚刚设置的值b')
+
   }
 
   const update = useUpdate()
+
   const updateView = () => update()
 
   return (
     <>
-      <h4>ref value: {ref?.a}</h4>
+      <h4>ref value: {ref?.value}</h4>
       <Button onClick={change}>change</Button>
       &nbsp;
       <Button onClick={updateView}>updateView</Button>
