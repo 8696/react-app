@@ -1,4 +1,4 @@
-import useGetState from '@/hooks/useGetState'
+import { useGetState } from 'ahooks'
 import { Button } from 'antd'
 import { useEffect } from 'react'
 
