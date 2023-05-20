@@ -1,6 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import { ConfigProvider } from 'antd'
+import useCheckAppVersion from '@/hooks/useCheckAppVersion'
+
 import zhCN from 'antd/lib/locale/zh_CN'
 const Main = React.lazy(() => import('@/layout/main'))
 const Error404 = React.lazy(() => import('@/view/error/404'))
@@ -8,6 +10,9 @@ const Error404 = React.lazy(() => import('@/view/error/404'))
 export default () => {
   // console.log(process.env.REACT_APP_URL_API)
   // console.log(process.env.REACT_APP_URL_API)
+
+  useCheckAppVersion()
+
   return (
     <ConfigProvider locale={zhCN}>
       <BrowserRouter>
