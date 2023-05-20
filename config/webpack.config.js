@@ -788,7 +788,15 @@ module.exports = (webpackEnv) => {
             }
           }
         }),
-      new ProgressPlugin(true)
+      new ProgressPlugin(true),
+      function() {
+        this.hooks.done.tap('writeAppVersionJson', (compilation) => {
+          fs.writeFileSync(
+            path.resolve(compilation.compilation.outputOptions.path, './version.json'),
+            JSON.stringify({ v: new Date().getTime().toString() })
+          )
+        })
+      }
     ].filter(Boolean),
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter
