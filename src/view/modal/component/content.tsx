@@ -6,7 +6,7 @@ export default (props: { visible: boolean, close: () => void }) => {
     <>
       <Modal
         destroyOnClose
-        visible={props.visible}
+        open={props.visible}
         onCancel={props.close}
         onOk={props.close}
         afterClose={() => {

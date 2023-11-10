@@ -3,12 +3,6 @@ module.exports = {
     'react-app'
   ],
   plugins: [
-    [
-      'import',
-      {
-        libraryName: 'antd',
-        style: true
-      }
-    ]
+
   ]
 }

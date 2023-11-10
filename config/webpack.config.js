@@ -28,8 +28,6 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 
 const createEnvironmentHash = require('./webpack/persistentCache/createEnvironmentHash')
 const ProgressPlugin = require('progress-webpack-plugin')
-// Ant design theme
-const antDesignTheme = require('./ant-design-theme')
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false'
 
@@ -174,11 +172,6 @@ module.exports = (webpackEnv) => {
         options.lessOptions = {
           javascriptEnabled: true,
           modifyVars: {
-            // #001
-            hack: 'true; @import "/src/style/antd-reset.less";',
-            // 'primary-color': '#1DA57A',
-            // 'border-radius-base': '14px'
-            ...antDesignTheme
           }
         }
       }
