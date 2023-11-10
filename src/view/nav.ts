@@ -23,5 +23,6 @@ export default [
   { name: 'hooks', link: '/hooks', C: React.lazy(() => import('@/view/hooks')) },
   { name: 'css-module', link: '/css-module', C: React.lazy(() => import('@/view/css-module')) },
   { name: 'router', link: '/router', C: React.lazy(() => import('@/view/router')) },
-  { name: 'state-render', link: '/state-render', C: React.lazy(() => import('@/view/state-render')) }
+  { name: 'state-render', link: '/state-render', C: React.lazy(() => import('@/view/state-render')) },
+  { name: 'theme', link: '/theme', C: React.lazy(() => import('@/view/theme')) }
 ]
