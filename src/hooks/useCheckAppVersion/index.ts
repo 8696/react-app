@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useMemoizedFn } from 'ahooks'
 import { Modal } from 'antd'
+import { IS_DEV } from '@/env.config'
 
 const APP_STORAGE = 'APP_VERSION'
 
@@ -56,8 +57,8 @@ export default () => {
   })
 
   useEffect(() => {
-    clearAppVersion()
-    checkAppVersion()
+    !IS_DEV && clearAppVersion()
+    !IS_DEV && checkAppVersion()
   }, [checkAppVersion, clearAppVersion])
 
 
