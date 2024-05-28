@@ -782,7 +782,7 @@ module.exports = (webpackEnv) => {
           }
         }),
       new ProgressPlugin(true),
-      function() {
+      isEnvProduction && function() {
         this.hooks.done.tap('writeAppVersionJson', (compilation) => {
           fs.writeFileSync(
             path.resolve(compilation.compilation.outputOptions.path, './version.json'),
