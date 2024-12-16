@@ -114,17 +114,17 @@
     "workbox-webpack-plugin": "6.6.0"
   },
   "devDependencies": {
-    "@ant-design/icons": "5.3.7",
+    "@ant-design/icons": "5.5.2",
     "@types/lodash": "4.17.4",
     "@types/qs": "6.9.15",
-    "ahooks": "3.8.0",
-    "antd": "5.17.4",
+    "ahooks": "3.8.4",
+    "antd": "5.22.5",
     "await-to-js": "3.0.0",
     "axios": "0.28.1",
     "axios-mock-adapter": "1.22.0",
     "lodash": "4.17.21",
     "qs": "6.12.1",
-    "tailwindcss": "3.4.3"
+    "tailwindcss": "3.4.16"
   },
   "engines": {
     "node": ">=14.18.0",
