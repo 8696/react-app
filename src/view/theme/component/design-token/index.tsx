@@ -1,10 +1,9 @@
 import { theme } from 'antd'
 
-const { useToken } = theme
 export default () => {
-  const { token  } = useToken()
-  // console.log(token)
-  // console.log(getDesignToken())
+
+  const { token  } = theme.useToken()
+
   return (
     <>
       <div className='m-view'>
@@ -15,7 +14,7 @@ export default () => {
               backgroundColor: token.colorPrimaryBg,
               padding: token.padding,
               borderRadius: token.borderRadius,
-              color: token.colorPrimaryText,
+              color: token.colorPrimary,
               fontSize: token.fontSize
             }}
           >

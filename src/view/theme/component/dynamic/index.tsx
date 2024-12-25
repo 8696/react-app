@@ -1,4 +1,4 @@
-import { theme, ColorPicker, Button, Alert } from 'antd'
+import { theme, ColorPicker, Button, message, App } from 'antd'
 import { useContext, useEffect } from 'react'
 import { ThemeContext } from '@/provider/theme'
 import Form from './form'
@@ -14,13 +14,30 @@ export default () => {
 
   const { setTheme } = useContext(ThemeContext)
 
+  const { message: messageApi } = App.useApp()
 
   return (
     <>
       <div className='m-view'>
         <h3 className='m-title'>动态设置</h3>
         <div>
-          <Button type='primary'>Primary Button</Button>
+          <Button type='primary' onClick={() => {
+            messageApi.open({
+              type: 'error',
+              content: '尝试设置主题error颜色试试icon的变化',
+              duration: 10
+            })
+          }}>useMessage</Button>
+          <br/>
+          <br/>
+          <Button type='primary' onClick={() => {
+            // 直接使用 message 无法使用全局 ConfigProvider 的主题
+            message.open({
+              type: 'success',
+              content: '直接使用 message 无法使用全局 ConfigProvider 的主题',
+              duration: 10
+            })
+          }}>message.success</Button>
           <br/>
           <br/>
           <Form/>
