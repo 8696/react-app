@@ -6,9 +6,13 @@ import nav from '../view/nav'
 
 import { useLocation } from 'react-router'
 import { NavLink } from 'react-router-dom'
+import useAntdHolderRender from '@/hooks/useAntdHolderRender'
 
 export default () => {
   const { pathname } = useLocation()
+
+  useAntdHolderRender()
+
   return (
     <>
       <React.Suspense fallback={<></>}>

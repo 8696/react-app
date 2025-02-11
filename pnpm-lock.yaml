@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@ant-design/cssinjs': 1.23.0
   '@ant-design/icons': 5.5.2
   '@babel/core': 7.26.0
   '@commitlint/cli': 17.8.1
@@ -83,6 +84,7 @@ specifiers:
   workbox-webpack-plugin: 6.6.1
 
 dependencies:
+  '@ant-design/cssinjs': 1.23.0_nnrd3gsncyragczmpvfhocinkq
   '@babel/core': 7.26.0
   '@commitlint/cli': 17.8.1
   '@commitlint/config-conventional': 17.8.1
@@ -193,15 +195,15 @@ packages:
       react: '>=16.9.0'
       react-dom: '>=16.9.0'
     dependencies:
-      '@ant-design/cssinjs': 1.22.1_nnrd3gsncyragczmpvfhocinkq
+      '@ant-design/cssinjs': 1.23.0_nnrd3gsncyragczmpvfhocinkq
       '@babel/runtime': 7.26.0
       rc-util: 5.44.2_nnrd3gsncyragczmpvfhocinkq
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
     dev: true
 
-  /@ant-design/cssinjs/1.22.1_nnrd3gsncyragczmpvfhocinkq:
-    resolution: {integrity: sha512-SLuXM4wiEE1blOx94iXrkOgseMZHzdr4ngdFu3VVDq6AOWh7rlwqTkMAtJho3EsBF6x/eUGOtK53VZXGQG7+sQ==}
+  /@ant-design/cssinjs/1.23.0_nnrd3gsncyragczmpvfhocinkq:
+    resolution: {integrity: sha512-7GAg9bD/iC9ikWatU9ym+P9ugJhi/WbsTWzcKN6T4gU0aehsprtke1UAaaSxxkjjmkJb3llet/rbUSLPgwlY4w==}
     peerDependencies:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
@@ -215,7 +217,6 @@ packages:
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
       stylis: 4.3.4
-    dev: true
 
   /@ant-design/fast-color/2.0.6:
     resolution: {integrity: sha512-y2217gk4NqL35giHl72o6Zzqji9O7vHh9YmhUVkPtAOpoTCH4uWxo/pr4VE8t0+ChEPs0qo4eJRC5Q1eXWo3vA==}
@@ -1971,11 +1972,9 @@ packages:
 
   /@emotion/hash/0.8.0:
     resolution: {integrity: sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==}
-    dev: true
 
   /@emotion/unitless/0.7.5:
     resolution: {integrity: sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==}
-    dev: true
 
   /@eslint-community/eslint-utils/4.4.1_eslint@8.57.1:
     resolution: {integrity: sha512-s3O3waFUrMV8P/XaF/+ZTp1X9XBZW1a4B97ZnjQF2KYWaFD2A8KyFBsrsfSjEmjn3RGWAIuvlneuZm3CUK3jbA==}
@@ -3369,7 +3368,7 @@ packages:
       react-dom: '>=16.9.0'
     dependencies:
       '@ant-design/colors': 7.1.0
-      '@ant-design/cssinjs': 1.22.1_nnrd3gsncyragczmpvfhocinkq
+      '@ant-design/cssinjs': 1.23.0_nnrd3gsncyragczmpvfhocinkq
       '@ant-design/cssinjs-utils': 1.1.3_nnrd3gsncyragczmpvfhocinkq
       '@ant-design/icons': 5.5.2_nnrd3gsncyragczmpvfhocinkq
       '@ant-design/react-slick': 1.1.2_react@18.3.1
@@ -4019,7 +4018,6 @@ packages:
 
   /classnames/2.5.1:
     resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
-    dev: true
 
   /clean-css/5.3.3:
     resolution: {integrity: sha512-D5J+kHaVb/wKSFcyyV75uCn8fiY4sV38XJoe4CUyGQ+mOU/fMVYUdH1hJC+CJQ5uY3EnW27SbJYS4X8BiLrAFg==}
@@ -9235,7 +9233,6 @@ packages:
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
       react-is: 18.3.1
-    dev: true
 
   /rc-virtual-list/3.16.0_nnrd3gsncyragczmpvfhocinkq:
     resolution: {integrity: sha512-tRpWBC0msU+MxFxnD6+y4v0P17Yzplf+mbiHrqRvfVanx0S4o0XV+2zu4vv7hM9nNfcucO+MPHivqpRT2lfnFQ==}
@@ -9327,7 +9324,6 @@ packages:
 
   /react-is/18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
-    dev: true
 
   /react-refresh/0.16.0:
     resolution: {integrity: sha512-FPvF2XxTSikpJxcr+bHut2H4gJ17+18Uy20D5/F+SKzFap62R3cM5wH6b8WN3LyGSYeQilLEcJcR1fjBSI2S1A==}
@@ -10444,7 +10440,6 @@ packages:
 
   /stylis/4.3.4:
     resolution: {integrity: sha512-osIBl6BGUmSfDkyH2mB7EFvCJntXDrLhKjHTRj/rK6xLH0yuPrHULDRQzKokSOD4VoorhtKpfcfW1GAntu8now==}
-    dev: true
 
   /sucrase/3.35.0:
     resolution: {integrity: sha512-8EbVDiu9iN/nESwxeSxDKe0dunta1GOlHufmSSXxMD2z2/tMZpDMpvXQGsc+ajGo8y2uYUmixaSRUc/QPoQ0GA==}

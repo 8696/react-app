@@ -24,19 +24,22 @@ export default () => {
           <Button type='primary' onClick={() => {
             messageApi.open({
               type: 'error',
-              content: '尝试设置主题error颜色试试icon的变化',
+              content: '这个是直接使用hook方式调用应用ConfigProvider配置的效果，尝试设置主题error颜色试试icon的变化',
               duration: 10
             })
           }}>useMessage</Button>
           <br/>
           <br/>
           <Button type='primary' onClick={() => {
-            // 直接使用 message 无法使用全局 ConfigProvider 的主题
-            message.open({
-              type: 'success',
-              content: '直接使用 message 无法使用全局 ConfigProvider 的主题',
-              duration: 10
-            })
+            // message.open({
+            //   type: 'error',
+            //   content: '这个是直接使用静态方法调用但是也能应用ConfigProvider配置的效果，尝试设置主题error颜色试试icon的变化。https://ant-design.antgroup.com/components/config-provider-cn#config-provider-demo-holderrender',
+            //   duration: 10
+            // })
+
+            // or
+
+            message.error('这个是直接使用静态方法调用但是也能应用ConfigProvider配置的效果，尝试设置主题error颜色试试icon的变化。https://ant-design.antgroup.com/components/config-provider-cn#config-provider-demo-holderrender')
           }}>message.success</Button>
           <br/>
           <br/>
