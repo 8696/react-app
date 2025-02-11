@@ -27,7 +27,7 @@ export default () => {
               content: '这个是直接使用hook方式调用应用ConfigProvider配置的效果，尝试设置主题error颜色试试icon的变化',
               duration: 10
             })
-          }}>useMessage</Button>
+          }}>Hook方式调用message</Button>
           <br/>
           <br/>
           <Button type='primary' onClick={() => {
@@ -40,7 +40,7 @@ export default () => {
             // or
 
             message.error('这个是直接使用静态方法调用但是也能应用ConfigProvider配置的效果，尝试设置主题error颜色试试icon的变化。https://ant-design.antgroup.com/components/config-provider-cn#config-provider-demo-holderrender')
-          }}>message.success</Button>
+          }}>静态方法调用message</Button>
           <br/>
           <br/>
           <Form/>
