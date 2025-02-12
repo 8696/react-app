@@ -1,4 +1,4 @@
-import { theme, ColorPicker, Button, message, App } from 'antd'
+import { theme, ColorPicker, Button, message, App, Modal } from 'antd'
 import { useContext, useEffect } from 'react'
 import { ThemeContext } from '@/provider/theme'
 import Form from './form'
@@ -20,6 +20,13 @@ export default () => {
     <>
       <div className='m-view'>
         <h3 className='m-title'>动态设置</h3>
+        <Form/>
+
+
+        <h3 className='m-title'>message等静态方法消费context</h3>
+        <span>使用 holderRender 给 message 、modal 、notification 静态方法设置 Provider</span>
+        <br/>
+        <br/>
         <div>
           <Button type='primary' onClick={() => {
             messageApi.open({
@@ -43,9 +50,17 @@ export default () => {
           }}>静态方法调用message</Button>
           <br/>
           <br/>
-          <Form/>
+          <Button type='primary' onClick={() => {
+            Modal.confirm({
+              title: 'Do you want to delete these items?',
+              content: 'Some descriptions'
+            })
+          }}>静态方法调用modal</Button>
         </div>
         <br/>
+
+        <h3 className='m-title'>设置主题</h3>
+
         <div className='flex items-center'>
           <span>选择主颜色：</span>
           <ColorPicker onChange={value => {
