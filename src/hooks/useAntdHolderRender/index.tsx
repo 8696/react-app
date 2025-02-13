@@ -10,7 +10,7 @@ export default () => {
   useLayoutEffect(() => {
     ConfigProvider.config({
       holderRender: (children) => (
-        <ConfigProvider prefixCls='static' iconPrefixCls='icon' locale={locale} theme={theme}>
+        <ConfigProvider locale={locale} theme={theme}>
           {children}
         </ConfigProvider>
       )
