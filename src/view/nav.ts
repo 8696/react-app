@@ -23,5 +23,7 @@ export default [
   { name: 'css-module', link: '/css-module', C: React.lazy(() => import('@/view/css-module')) },
   { name: 'router', link: '/router', C: React.lazy(() => import('@/view/router')) },
   { name: 'state-render', link: '/state-render', C: React.lazy(() => import('@/view/state-render')) },
-  { name: 'theme', link: '/theme', C: React.lazy(() => import('@/view/theme')) }
+  { name: 'theme', link: '/theme', C: React.lazy(() => import('@/view/theme')) },
+  { name: 'moment-to-day-js', link: '/moment-to-day-js', C: React.lazy(() => import('@/view/moment-to-day-js')) },
+  { name: 'day-js-to-moment', link: '/day-js-to-moment', C: React.lazy(() => import('@/view/day-js-to-moment')) }
 ]

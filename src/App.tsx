@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import { ConfigProvider, App, ThemeConfig } from 'antd'
 import useCheckAppVersion from '@/hooks/useCheckAppVersion'
-
+import useDayJsToZhCn from '@/hooks/useDayJsToZhCn'
 import zhCN from 'antd/lib/locale/zh_CN'
 import { ThemeContext } from '@/provider/theme'
 import { useMount } from 'ahooks'
@@ -15,6 +15,8 @@ export default () => {
   // console.log(process.env.REACT_APP_URL_API)
 
   useCheckAppVersion()
+
+  useDayJsToZhCn()
 
   // 主题
   const [theme, setTheme] = useState<ThemeConfig>()
