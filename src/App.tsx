@@ -3,7 +3,7 @@ import { useMount } from 'ahooks'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import { ConfigProvider, App, ThemeConfig } from 'antd'
 import zhCN from 'antd/lib/locale/zh_CN'
-import defaultToken from '@/theme/defaultToken'
+import defaultTheme from '@/theme/defaultTheme'
 
 import { ThemeContext } from '@/provider/theme'
 import useCheckAppVersion from '@/hooks/useCheckAppVersion'
@@ -28,9 +28,7 @@ export default () => {
   const [theme, setTheme] = useState<ThemeConfig>()
 
   useMount(() => {
-    setTheme({
-      token: defaultToken
-    })
+    setTheme(defaultTheme)
   })
 
   return (
