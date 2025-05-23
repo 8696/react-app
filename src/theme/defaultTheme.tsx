@@ -5,7 +5,8 @@ const themeConfig: ThemeConfig = {
     borderRadius: 4
   },
   components: {
-  }
+  },
+  cssVar: true
 }
 
 export default themeConfig

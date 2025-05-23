@@ -1,7 +1,7 @@
 import { theme, ColorPicker, Button, message, App, Modal } from 'antd'
-import { useContext, useEffect } from 'react'
-import { ThemeContext } from '@/provider/theme'
+import { useEffect } from 'react'
 import Form from './form'
+import { useTheme } from '@/provider/theme'
 
 const { useToken } = theme
 export default () => {
@@ -12,9 +12,10 @@ export default () => {
     console.log(token.colorPrimary)
   }, [token])
 
-  const { setTheme } = useContext(ThemeContext)
 
   const { message: messageApi } = App.useApp()
+
+  const { updateToken, updateTheme } = useTheme()
 
   return (
     <>
@@ -47,6 +48,7 @@ export default () => {
             // or
 
             message.error('这个是直接使用静态方法调用但是也能应用ConfigProvider配置的效果，尝试设置主题error颜色试试icon的变化。https://ant-design.antgroup.com/components/config-provider-cn#config-provider-demo-holderrender')
+            console.log(token.colorPrimary)
           }}>静态方法调用message</Button>
           <br/>
           <br/>
@@ -64,33 +66,24 @@ export default () => {
         <div className='flex items-center'>
           <span>选择主颜色：</span>
           <ColorPicker onChange={value => {
-            setTheme?.({
-              token: {
-                ...token,
-                colorPrimary: '#' + value.toHex()
-              }
+            updateToken?.({
+              colorPrimary: '#' + value.toHex()
             })
           }}/>
         </div>
         <div className='flex items-center'>
           <span>选择主hover颜色：</span>
           <ColorPicker onChange={value => {
-            setTheme?.({
-              token: {
-                ...token,
-                colorPrimaryHover: '#' + value.toHex()
-              }
+            updateToken?.({
+              colorPrimaryHover: '#' + value.toHex()
             })
           }}/>
         </div>
         <div className='flex items-center'>
           <span>选择error颜色：</span>
           <ColorPicker onChange={value => {
-            setTheme?.({
-              token: {
-                ...token,
-                colorError: '#' + value.toHex()
-              }
+            updateToken?.({
+              colorError: '#' + value.toHex()
             })
           }}/>
         </div>
@@ -99,14 +92,38 @@ export default () => {
           <Button
             type='primary'
             onClick={() => {
-              setTheme?.({
-                token: {
-                  ...token,
-                  borderRadius: 20
-                }
+              updateToken?.({
+                borderRadius: 20
               })
             }}
           >设置圆角</Button>
+        </div>
+        <h3 className='m-title'>CSS 变量</h3>
+
+        <div className=''>
+          <div>
+            <span style={{ color: 'var(--ant-color-primary)' }}>--ant-color-primary</span>
+            &nbsp;
+            <span style={{ color: 'var(--ant-color-error)' }}>--ant-color-error</span>
+          </div>
+          <br />
+          <Button
+            type='primary'
+            onClick={() => {
+              updateTheme?.({
+                cssVar: false
+              })
+            }}
+          >关闭css变量</Button>
+          &nbsp;
+          <Button
+            type='primary'
+            onClick={() => {
+              updateTheme?.({
+                cssVar: true
+              })
+            }}
+          >打开css变量</Button>
         </div>
       </div>
     </>

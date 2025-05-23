@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
-import { useMount } from 'ahooks'
+import React, {} from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
-import { ConfigProvider, App, ThemeConfig } from 'antd'
+import { ConfigProvider, App as AntdApp } from 'antd'
 import zhCN from 'antd/lib/locale/zh_CN'
-import defaultTheme from '@/theme/defaultTheme'
 
-import { ThemeContext } from '@/provider/theme'
+import { useTheme, ThemeProvider } from '@/provider/theme'
 import useCheckAppVersion from '@/hooks/useCheckAppVersion'
 import useDayJsToZhCn from '@/hooks/useDayJsToZhCn'
 import useAntdHolderRender from '@/hooks/useAntdHolderRender'
@@ -13,29 +11,29 @@ import useAntdHolderRender from '@/hooks/useAntdHolderRender'
 const Layout = React.lazy(() => import('@/layout/index'))
 const Error404 = React.lazy(() => import('@/view/error/404'))
 
-const Init = ({ children }: { children: React.ReactNode }) => {
+const RenderBefore = ({ children }: { children: React.ReactNode }) => {
   useDayJsToZhCn()
   useAntdHolderRender()
   useCheckAppVersion()
   return <>{children}</>
 }
 
+const RenderConfigProvider = ({ children }: { children: React.ReactNode }) => {
+  // 主题
+  const { theme } = useTheme()
+  return <ConfigProvider locale={zhCN} theme={theme}>{children}</ConfigProvider>
+}
+
+
 export default () => {
   // console.log(process.env.REACT_APP_URL_API)
   // console.log(process.env.REACT_APP_URL_API)
 
-  // 主题
-  const [theme, setTheme] = useState<ThemeConfig>()
-
-  useMount(() => {
-    setTheme(defaultTheme)
-  })
-
   return (
-    <ThemeContext.Provider value={{ setTheme }}>
-      <ConfigProvider locale={zhCN} theme={theme}>
-        <App>
-          <Init>
+    <ThemeProvider>
+      <RenderConfigProvider>
+        <RenderBefore>
+          <AntdApp>
             <BrowserRouter>
               <React.Suspense fallback={<></>}>
                 <Switch>
@@ -45,9 +43,9 @@ export default () => {
                 </Switch>
               </React.Suspense>
             </BrowserRouter>
-          </Init>
-        </App>
-      </ConfigProvider>
-    </ThemeContext.Provider>
+          </AntdApp>
+        </RenderBefore>
+      </RenderConfigProvider>
+    </ThemeProvider>
   )
 }
