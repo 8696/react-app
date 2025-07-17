@@ -65,6 +65,7 @@ specifiers:
   react-refresh: 0.17.0
   react-router: 5.3.4
   react-router-dom: 5.3.4
+  recorder-core: ^1.3.25011100
   resolve: 1.22.10
   resolve-url-loader: 3.1.5
   sass: 1.89.0
@@ -141,6 +142,7 @@ dependencies:
   react-refresh: 0.17.0
   react-router: 5.3.4_react@18.3.1
   react-router-dom: 5.3.4_react@18.3.1
+  recorder-core: 1.3.25011100
   resolve: 1.22.10
   resolve-url-loader: 3.1.5
   sass: 1.89.0
@@ -9560,6 +9562,10 @@ packages:
   /readdirp/4.0.2:
     resolution: {integrity: sha512-yDMz9g+VaZkqBYS/ozoBJwaBhTbZo3UNYQHNRw1D3UFQB8oHB4uS/tAODO+ZLjGWmUbKnIlOWO+aaIiAxrUWHA==}
     engines: {node: '>= 14.16.0'}
+    dev: false
+
+  /recorder-core/1.3.25011100:
+    resolution: {integrity: sha512-trXsCH0zurhoizT4Z22C0OsM0SDOW+2OvtgRxeLQFwxoFeqFjDjYZsbZEZUiKMJLhBvamI4K7Ic+qZ2LBo74TA==}
     dev: false
 
   /recursive-readdir/2.2.3:
