@@ -23,7 +23,7 @@
   注意：此文件保留了原实现的主要逻辑，仅对所有注释进行了逐行替换/补充，帮助阅读与维护。
 */
 
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Button, Card, Divider, Form, Input, InputNumber, List, Space, Slider, Tag, Typography, message } from 'antd'
 import type { SliderSingleProps } from 'antd'
 import useGetState from '@/hooks/useGetState'
@@ -36,7 +36,6 @@ import useGetState from '@/hooks/useGetState'
  * - offset: 该段在“虚拟整段音轨”中的起始时间（秒），由 calculateOffsets 根据前面各段累加得到
  */
 export type Segment = { index: number; url: string; duration: number; offset: number };
-
 
 
 /**
@@ -67,7 +66,8 @@ function fmt(t: number): string {
 export function getMp3Duration(url: string): Promise<number> {
   return new Promise((resolve, reject) => {
     const a = new Audio()
-    let timeoutId: NodeJS.Timeout
+    // eslint-disable-next-line prefer-const
+    let timeoutId: any
 
     const onLoaded = () => {
       cleanup()
@@ -90,9 +90,10 @@ export function getMp3Duration(url: string): Promise<number> {
     timeoutId = setTimeout(() => {
       cleanup()
       reject(new Error('获取音频时长超时'))
-    }, 10000) // 10 秒
+    }, 10000)
 
-    a.preload = 'metadata'   // 只下载元信息
+    // 只下载元信息
+    a.preload = 'metadata'
     a.src = url
     a.addEventListener('loadedmetadata', onLoaded)
     a.addEventListener('error', onErr)
@@ -212,7 +213,8 @@ export default function SegmentedMp3Player() {
     // 如果尚未创建播放实例则创建并绑定事件
     if (!audioRef.current) {
       audioRef.current = new Audio()
-      audioRef.current.preload = 'auto' // 尽量缓冲播放时需要的资源
+      // 尽量缓冲播放时需要的资源
+      audioRef.current.preload = 'auto'
       attachAudioEvents(audioRef.current)
     }
     // 创建用于预加载下一段的 audio（仅作缓存）
@@ -275,12 +277,14 @@ export default function SegmentedMp3Player() {
 
     const seg = segments[segArrayIdx]
     const a = audioRef.current
-    if (!a) return // 安全检查，防止在实例被销毁后调用
+    // 安全检查，防止在实例被销毁后调用
+    if (!a) return
 
     // 切换到目标段的资源并 reload
     a.src = seg.url
     try {
-      a.load() // 触发重新缓冲
+      // 触发重新缓冲
+      a.load()
     } catch {}
 
     // 段内定位（防止越界）
@@ -292,6 +296,7 @@ export default function SegmentedMp3Player() {
 
     // 在 canplay 后再 play（兼容性考虑）
     a.oncanplay = () => {
+      // eslint-disable-next-line no-empty-function,@typescript-eslint/no-empty-function
       if (autoplay) void a.play().catch(() => {})
     }
 
@@ -299,7 +304,8 @@ export default function SegmentedMp3Player() {
     // todo 看下是不是需要删除
     if (segArrayIdx < segments.length - 1) {
       const next = preloadedNextRef.current
-      if (next) { // 防御性检查
+      // 防御性检查
+      if (next) {
         const nextUrl = segments[segArrayIdx + 1].url
         if (next.src !== nextUrl) {
           next.src = nextUrl
@@ -335,8 +341,10 @@ export default function SegmentedMp3Player() {
           const nextUrl = segments[i + 1].url
           if (next.src !== nextUrl) {
             next.src = nextUrl
+            // eslint-disable-next-line max-depth
             try {
-              next.load() // 仅做缓存，不会播放
+              // 仅做缓存，不会播放
+              next.load()
             } catch {}
           }
         }
@@ -388,7 +396,9 @@ export default function SegmentedMp3Player() {
       playSegmentAt(0, 0, true)
     } else {
       const a = audioRef.current
-      if (a) { // 防御性检查
+      // 防御性检查
+      if (a) {
+        // eslint-disable-next-line no-empty-function,@typescript-eslint/no-empty-function
         void a.play().catch(() => {})
       }
     }
@@ -408,7 +418,8 @@ export default function SegmentedMp3Player() {
     setIsPlaying(false)
     setCurrentSegIdx(-1)
     setSegLocalTime(0)
-    a.removeAttribute('src') // 清空资源，回到未加载状态
+    // 清空资源，回到未加载状态
+    a.removeAttribute('src')
   }
 
   /** 滑块最大值使用总时长（向上取整为整数秒），Slider 的单位是秒 */

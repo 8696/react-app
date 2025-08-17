@@ -234,6 +234,8 @@ module.exports = {
     // 允许出现空函数
     '@typescript-eslint/no-empty-function': isEnvProduction ? ['error'] : ['warn'],
     // 空标签必须自闭合
-    'react/self-closing-comp': ['error']
+    'react/self-closing-comp': ['error'],
+    // useEffect、useMemo 等 Hooks 的依赖项是否完整
+    'react-hooks/exhaustive-deps': ['warn']
   }
 }

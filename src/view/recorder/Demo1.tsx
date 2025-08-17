@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState } from 'react'
 import { Button, Space, message } from 'antd'
 import Recorder from 'recorder-core'
 
@@ -12,7 +12,6 @@ const RecorderDemo: React.FC<any> = () => {
   const [isRecording, setIsRecording] = useState(false)
   const [isPaused, setIsPaused] = useState(false)
   const [audioUrl, setAudioUrl] = useState<any>(null)
-  const [audioChunks, setAudioChunks] = useState<any[]>([])
 
 
   // 权限 + 初始化录音器
@@ -52,7 +51,6 @@ const RecorderDemo: React.FC<any> = () => {
       setIsRecording(true)
       setIsPaused(false)
       setAudioUrl(null)
-      setAudioChunks([])
     } catch (e) {
     }
   }

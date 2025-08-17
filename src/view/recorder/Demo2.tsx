@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState } from 'react'
 import { Button, Space, message } from 'antd'
 import Recorder from 'recorder-core'
 
@@ -48,7 +48,7 @@ const RecorderDemo: React.FC<any> = () => {
         noiseSuppression: true,
         autoGainControl: true
       },
-      onProcess(buffers: any, powerLevel: any, bufferDuration: any, bufferSampleRate: any, newBufferIdx: any, asyncEnd: any) {
+      onProcess(buffers: any, powerLevel: any, bufferDuration: any, bufferSampleRate: any, newBufferIdx: any) {
         console.log('正在录音：', buffers.length, bufferDuration, newBufferIdx)
         setDuration(bufferDuration / 1000)
       },
