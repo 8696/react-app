@@ -20,7 +20,7 @@ const envCustomValue = {
     comment: '当前运行使用env文件名称',
     values: [
       '.env.custom.development',
-      '.env.custom.beta',
+      '.env.custom.test',
       '.env.custom.production'
     ]
   },
@@ -51,9 +51,9 @@ const envCustomValue = {
   REACT_APP_URL_API: {
     comment: '请求地址',
     values: [
-      'http://development.com',
-      'http://test.com',
-      'http://production.com'
+      'http://development1.com',
+      'http://test1.com',
+      'http://production1.com'
     ]
   }
 }
@@ -92,7 +92,7 @@ const mkdirContent = (envIndex) => {
     scripts[`start:${envCustomItem}`]
       = `cross-env CUSTOM_ENV=${envCustomItem} node scripts/start.js`
     scripts[`build:${envCustomItem}`]
-      = `pnpm run eslint && cross-env CUSTOM_ENV=${envCustomItem} node scripts/build.js`
+      = `yarn eslint && cross-env CUSTOM_ENV=${envCustomItem} node scripts/build.js`
   }
   // 刷入 script
   packageData.scripts = {
@@ -104,5 +104,4 @@ const mkdirContent = (envIndex) => {
     JSON.stringify(packageData, null, '  ')
   )
 }())
-
 

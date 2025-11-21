@@ -5,25 +5,25 @@
   "license": "MIT",
   "scripts": {
     "start:development": "cross-env CUSTOM_ENV=development node scripts/start.js",
-    "build:development": "pnpm run eslint && cross-env CUSTOM_ENV=development node scripts/build.js",
+    "build:development": "yarn eslint && cross-env CUSTOM_ENV=development node scripts/build.js",
     "start:test": "cross-env CUSTOM_ENV=test node scripts/start.js",
-    "build:test": "pnpm run eslint && cross-env CUSTOM_ENV=test node scripts/build.js",
+    "build:test": "yarn eslint && cross-env CUSTOM_ENV=test node scripts/build.js",
     "start:production": "cross-env CUSTOM_ENV=production node scripts/start.js",
-    "build:production": "pnpm run eslint && cross-env CUSTOM_ENV=production node scripts/build.js",
-    "analyze": "pnpm run clear:cache && pnpm run eslint && cross-env CUSTOM_ENV=production ANALYZE=true node scripts/build.js",
+    "build:production": "yarn eslint && cross-env CUSTOM_ENV=production node scripts/build.js",
+    "analyze": "yarn clear:cache && yarn eslint && cross-env CUSTOM_ENV=production ANALYZE=true node scripts/build.js",
     "eslint": "cross-env NODE_ENV=production eslint --fix ./src",
     "prepare": "husky install",
     "preview": "serve -s -u ./build",
-    "git:commit": "pnpm run eslint && git add . && git commit -m \"feat: git:commit\" && git push origin master",
+    "git:commit": "yarn eslint && git add . && git commit -m \"feat: git:commit\" && git push origin master",
     "clear:package": "rm -rf ./node_modules && rm -rf build && rm -rf coverage",
-    "init:package": "pnpm run clear:package && pnpm install",
+    "init:package": "yarn clear:package && yarn install",
     "clear:cache": "rm -rf ./node_modules/.cache",
     "init:cusenv": "node ./customEnv.js",
     "ncu:check": "ncu --target minor",
     "ncu:update": "ncu --target minor -u"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": "pnpm run eslint"
+    "src/**/*.{js,jsx,ts,tsx}": "yarn eslint"
   },
   "eslintConfig": {
     "extends": [
@@ -47,7 +47,7 @@
     "@babel/core": "7.28.3",
     "@commitlint/cli": "17.8.1",
     "@commitlint/config-conventional": "17.8.1",
-    "@pmmmwh/react-refresh-webpack-plugin": "0.6.1",
+    "@pmmmwh/react-refresh-webpack-plugin": "0.5.17",
     "@svgr/webpack": "6.5.1",
     "@types/node": "16.18.126",
     "@types/react": "18.3.23",
@@ -131,9 +131,12 @@
     "qs": "6.14.0",
     "tailwindcss": "3.4.17"
   },
-  "engines": {
-    "node": ">=14.18.0",
-    "pnpm": ">=7.10.0"
+  "resolutions": {
+    "@types/react": "18.3.23",
+    "@types/react-dom": "18.3.7"
   },
-  "packageManager": "pnpm@7.33.7"
+  "engines": {
+    "node": ">=16.0.0",
+    "yarn": ">=1.22.0"
+  }
 }

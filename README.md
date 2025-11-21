@@ -7,8 +7,8 @@
 项目的主要目录和文件结构如下：
 
 ### 根目录文件
-- **`package.json`**：记录项目的元数据，包括项目名称、版本、依赖项、脚本命令等信息。它是 npm 或 pnpm 管理项目依赖和执行脚本的核心文件。
-- **`pnpm-lock.yaml`**：pnpm 的锁文件，用于锁定项目依赖的具体版本，确保在不同环境下安装的依赖版本一致，以保证项目的可重复性和稳定性。
+- **`package.json`**：记录项目的元数据，包括项目名称、版本、依赖项、脚本命令等信息。它是 npm 或 Yarn 管理项目依赖和执行脚本的核心文件。
+- **`yarn.lock`**：Yarn 的锁文件，用于锁定项目依赖的具体版本，确保在不同环境下安装的依赖版本一致，以保证项目的可重复性和稳定性。
 - **`README.md`**：即本文件，用于介绍项目的基本信息、使用方法等。
 
 ### 主要目录
@@ -31,7 +31,7 @@
   - 包含一些自定义的脚本文件，这些脚本可以用于执行一些特定的任务，如构建、部署等。
 
 ## 依赖管理
-本项目使用 pnpm 作为包管理器，pnpm 是一个快速、高效的包管理器，它具有磁盘空间利用率高、安装速度快等优点。项目的依赖信息记录在 `package.json` 和 `pnpm-lock.yaml` 文件中。
+本项目使用 Yarn 作为包管理器。项目的依赖信息记录在 `package.json` 和 `yarn.lock` 文件中。
 
 ### 主要依赖
 - **`react` 和 `react-dom`**：React 的核心库，用于构建用户界面和管理 DOM 元素。
@@ -49,7 +49,7 @@
   - 命令：`cross-env CUSTOM_ENV=development node scripts/start.js`
   - 用途：设置自定义环境变量`CUSTOM_ENV`为`development`，然后运行`scripts/start.js`脚本，通常用于启动开发服务器。
 - **`build:development`**
-  - 命令：`pnpm run eslint && cross-env CUSTOM_ENV=development node scripts/build.js`
+  - 命令：`yarn eslint && cross-env CUSTOM_ENV=development node scripts/build.js`
   - 用途：先运行`eslint`检查代码，然后设置自定义环境变量`CUSTOM_ENV`为`development`，再运行`scripts/build.js`脚本，用于在开发环境下进行项目构建。
 
 #### 测试环境相关命令
@@ -57,7 +57,7 @@
   - 命令：`cross-env CUSTOM_ENV=test node scripts/start.js`
   - 用途：设置自定义环境变量`CUSTOM_ENV`为`test`，然后运行`scripts/start.js`脚本，通常用于启动测试环境服务器。
 - **`build:test`**
-  - 命令：`pnpm run eslint && cross-env CUSTOM_ENV=test node scripts/build.js`
+  - 命令：`yarn eslint && cross-env CUSTOM_ENV=test node scripts/build.js`
   - 用途：先运行`eslint`检查代码，然后设置自定义环境变量`CUSTOM_ENV`为`test`，再运行`scripts/build.js`脚本，用于在测试环境下进行项目构建。
 
 #### 生产环境相关命令
@@ -65,12 +65,12 @@
   - 命令：`cross-env CUSTOM_ENV=production node scripts/start.js`
   - 用途：设置自定义环境变量`CUSTOM_ENV`为`production`，然后运行`scripts/start.js`脚本，通常用于启动生产环境服务器。
 - **`build:production`**
-  - 命令：`pnpm run eslint && cross-env CUSTOM_ENV=production node scripts/build.js`
+  - 命令：`yarn eslint && cross-env CUSTOM_ENV=production node scripts/build.js`
   - 用途：先运行`eslint`检查代码，然后设置自定义环境变量`CUSTOM_ENV`为`production`，再运行`scripts/build.js`脚本，用于在生产环境下进行项目构建。
 
 #### 分析命令
 - **`analyze`**
-  - 命令：`pnpm run clear:cache && pnpm run eslint && cross-env CUSTOM_ENV=production ANALYZE=true node scripts/build.js`
+  - 命令：`yarn clear:cache && yarn eslint && cross-env CUSTOM_ENV=production ANALYZE=true node scripts/build.js`
   - 用途：先清除缓存，然后运行`eslint`检查代码，接着设置自定义环境变量`CUSTOM_ENV`为`production`且`ANALYZE`为`true`，最后运行`scripts/build.js`脚本，用于对生产环境构建进行分析。
 
 #### 代码检查命令
@@ -90,7 +90,7 @@
 
 #### Git相关命令
 - **`git:commit`**
-  - 命令：`pnpm run eslint && git add . && git commit -m "feat: git:commit" && git push origin master`
+  - 命令：`yarn eslint && git add . && git commit -m "feat: git:commit" && git push origin master`
   - 用途：先运行`eslint`检查代码，然后将所有文件添加到Git暂存区，提交代码并添加固定的提交信息，最后推送到`origin`的`master`分支。
 
 #### 清理命令
@@ -103,7 +103,7 @@
 
 #### 初始化命令
 - **`init:package`**
-  - 命令：`pnpm run clear:package && pnpm install`
+  - 命令：`yarn clear:package && yarn install`
   - 用途：先清理项目依赖和构建产物，然后重新安装项目依赖。
 - **`init:cusenv`**
   - 命令：`node ./customEnv.js`
@@ -127,15 +127,15 @@ cd <项目目录>
 ```
 
 ### 安装依赖
-使用 pnpm 安装项目的依赖：
+使用 Yarn 安装项目的依赖：
 ```bash
-pnpm install
+yarn install
 ```
 
 ### 启动项目
 安装完成后，使用以下命令启动开发服务器：
 ```bash
-pnpm start
+yarn start:development
 ```
 
 打开浏览器，访问 `http://localhost:8280` 即可看到项目的运行效果。
