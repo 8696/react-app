@@ -1,4 +1,4 @@
-import './index.less'
+import styles from './index.module.less'
 
 import { Typography, Divider } from 'antd'
 
@@ -10,7 +10,7 @@ const ancientSong = '愿夜风温柔，愿灯光长久，愿每次道别都能�
 
 export default () => {
   return (
-    <div className='m-view typography-demo'>
+    <div className={`m-view ${styles.typographyDemo}`}>
       <Typography>
         <Title level={2}>月影杉林的守护者</Title>
         <Paragraph type='secondary'>
@@ -58,7 +58,7 @@ export default () => {
         <Divider />
 
         <Title level={3}>第二章 · 锦册与密咒</Title>
-        <Paragraph className='paragraph-card'>
+        <Paragraph className={styles.paragraphCard}>
           林中珍藏着一卷<Text strong>万愿锦册</Text>，它会自动拓展，记下孩子的心愿、旅人的思绪与商队的歌谣。
           阿岚与洛羽将其存入档案，为耐心的读者标注提示：请做好被故事吞没的准备。
         </Paragraph>
