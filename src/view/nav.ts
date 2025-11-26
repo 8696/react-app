@@ -5,6 +5,7 @@ export default [
   { name: 'antd', link: '/antd', C: React.lazy(() => import('@/view/antd')) },
   { name: 'antd-typography', link: '/antd-typography', C: React.lazy(() => import('@/view/antd-typography')) },
   { name: 'antd-watermark', link: '/antd-watermark', C: React.lazy(() => import('@/view/antd-watermark')) },
+  { name: 'antd-timeline', link: '/antd-timeline', C: React.lazy(() => import('@/view/antd-timeline')) },
   { name: 'template', link: '/template', C: React.lazy(() => import('@/view/template')) },
   { name: 'table', link: '/table', C: React.lazy(() => import('@/view/table')) },
   { name: 'env', link: '/env', C: React.lazy(() => import('@/view/env')) },
