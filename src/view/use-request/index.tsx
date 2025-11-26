@@ -2,6 +2,7 @@ import './index.less'
 import { Button } from 'antd'
 import { useUserName } from './http'
 import { useEffect } from 'react'
+import DemoTitle from '@/component/DemoTitle'
 
 export default () => {
   const { refreshAsync, data, runAsync, loading } = useUserName({
@@ -16,7 +17,7 @@ export default () => {
 
   return (
     <div className='m-view'>
-      <h3 className='m-title'>使用上一次请求参数</h3>
+      <DemoTitle>使用上一次请求参数</DemoTitle>
       <Button loading={loading} onClick={() => {
         refreshAsync()
           .then(data => {
@@ -24,7 +25,7 @@ export default () => {
             console.log(JSON.stringify(data, null, '  '))
           })
       }}>refreshAsync</Button>
-      <h3 className='m-title'>使用新的请求参数</h3>
+      <DemoTitle>使用新的请求参数</DemoTitle>
       <Button loading={loading} onClick={() => {
         runAsync({
           type: 'runAsync' + Math.random()

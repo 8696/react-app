@@ -27,6 +27,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Button, Card, Divider, Form, Input, InputNumber, List, Space, Slider, Tag, Typography, message } from 'antd'
 import type { SliderSingleProps } from 'antd'
 import useGetState from '@/hooks/useGetState'
+import DemoTitle from '@/component/DemoTitle'
 
 /**
  * 每段音频的类型定义
@@ -536,7 +537,7 @@ export default function SegmentedMp3Player() {
 
   return (
     <div className='p-6 max-w-5xl mx-auto'>
-      <Title level={3}>分段 MP3 播放器 Demo</Title>
+      <DemoTitle level={3}>分段 MP3 播放器 Demo</DemoTitle>
 
       {/* 播放控制：播放 / 暂停 / 停止 + 当前播放状态 */}
       <Card className='mt-4' title='播放控制'>

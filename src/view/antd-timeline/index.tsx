@@ -8,6 +8,7 @@ import {
   SyncOutlined,
   SmileOutlined
 } from '@ant-design/icons'
+import DemoTitle from '@/component/DemoTitle'
 
 const { Title, Paragraph, Text } = Typography
 
@@ -46,8 +47,8 @@ const productRelease = [
 export default () => {
   return (
     <div className={`m-view ${styles.timelineDemo}`}>
+      <DemoTitle level={2}>Timeline 场景演示</DemoTitle>
       <Typography>
-        <Title level={2}>Timeline 场景演示</Title>
         <Paragraph className={styles.intro}>
           结合实际项目节奏展示 Ant Design Timeline 的多种用法：发布计划、物流追踪与项目里程碑。
           通过 <Text code>dot</Text>、<Text code>mode</Text>、<Text code>pending</Text> 等属性可以灵活控制节点形态。

@@ -3,17 +3,18 @@ import Basics from './component/basics'
 import PromiseC from './component/promise'
 import Timeout from './component/timeout'
 import Original from './component/original'
+import DemoTitle from '@/component/DemoTitle'
 export default () => {
   return (
     <>
       <div className='m-view'>
-        <h3 className='m-title'>basics</h3>
+        <DemoTitle>basics</DemoTitle>
         <Basics />
-        <h3 className='m-title'>promise</h3>
+        <DemoTitle>promise</DemoTitle>
         <PromiseC />
-        <h3 className='m-title'>timeout</h3>
+        <DemoTitle>timeout</DemoTitle>
         <Timeout />
-        <h3 className='m-title'>original</h3>
+        <DemoTitle>original</DemoTitle>
         <Original />
       </div>
     </>

@@ -5,6 +5,7 @@ import { DatePicker as MomentDatePicker } from './component'
 import dayjs from 'dayjs'
 import moment from 'moment'
 import useMomentToZhCn from './useMomentToZhCn'
+import DemoTitle from '@/component/DemoTitle'
 
 const { RangePicker } = DatePicker
 const { RangePicker: MomentRangePicker } = MomentDatePicker
@@ -29,13 +30,13 @@ export default () => {
 
   return (
     <div className='m-view'>
-      <h3 className='m-title'>说明</h3>
+      <DemoTitle>说明</DemoTitle>
       <div className='m-desc'>V5版本中内置的时间库使用 Dayjs 替代 Moment.js，如果在升级前使用大量的 Moment.js API，可以参考以下方式进行替换
         <a
           target='_blank'
           href='https://ant-design.antgroup.com/docs/react/use-custom-date-library-cn#自定义组件' rel='noreferrer'>https://ant-design.antgroup.com/docs/react/use-custom-date-library-cn#自定义组件</a>
       </div>
-      <h3 className='m-title'>DatePicker(day.js)</h3>
+      <DemoTitle>DatePicker(day.js)</DemoTitle>
       <DatePicker
         showTime
         onChange={(value) => {
@@ -44,7 +45,7 @@ export default () => {
         }}
         value={datePickerValue}
       />
-      <h3 className='m-title'>DatePicker.RangePicker(day.js)</h3>
+      <DemoTitle>DatePicker.RangePicker(day.js)</DemoTitle>
       <RangePicker
         showTime={{ format: 'HH:mm' }}
         format='YYYY-MM-DD HH:mm'
@@ -56,7 +57,7 @@ export default () => {
         }}
         value={dateRangePickerValue}
       />
-      <h3 className='m-title'>DatePicker(moment.js)</h3>
+      <DemoTitle>DatePicker(moment.js)</DemoTitle>
       <MomentDatePicker
         showTime
         onChange={(value) => {
@@ -65,7 +66,7 @@ export default () => {
         }}
         value={momentDatePickerValue}
       />
-      <h3 className='m-title'>DatePicker.RangePicker(moment.js)</h3>
+      <DemoTitle>DatePicker.RangePicker(moment.js)</DemoTitle>
       <MomentRangePicker
         showTime={{ format: 'HH:mm' }}
         format='YYYY-MM-DD HH:mm'

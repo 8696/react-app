@@ -1,6 +1,7 @@
 import styles from './index.module.less'
 
 import { Watermark, Typography, Card, Space, Divider } from 'antd'
+import DemoTitle from '@/component/DemoTitle'
 
 const { Title, Paragraph, Text } = Typography
 
@@ -9,8 +10,8 @@ const logoSvg = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"
 export default () => {
   return (
     <div className={`m-view ${styles.watermarkDemo}`}>
+      <DemoTitle level={2}>Ant Design Watermark 演示</DemoTitle>
       <Typography>
-        <Title level={2}>Ant Design Watermark 演示</Title>
         <Paragraph type='secondary'>
           通过<Text strong>Watermark</Text> 组件可以快速为内容添加防拷贝提示或品牌标识。这里展示了文本、多行以及图像水印的常见配置。
         </Paragraph>

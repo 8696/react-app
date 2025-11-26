@@ -2,6 +2,7 @@ import './index.less'
 import React from 'react'
 import { DatePicker } from 'antd'
 import dayjs from 'dayjs'
+import DemoTitle from '@/component/DemoTitle'
 
 const { RangePicker } = DatePicker
 
@@ -15,11 +16,11 @@ export default () => {
 
   return (
     <div className='m-view'>
-      <h3 className='m-title'>说明</h3>
+      <DemoTitle>说明</DemoTitle>
       <div className='m-desc'>V5版本中内置的时间库使用 Dayjs 替代 Moment.js，Day.js 相比于 moment 使用了不可变数据结构，性能更快，体积仅
         2KB，API 设计完全一致
       </div>
-      <h3 className='m-title'>DatePicker</h3>
+      <DemoTitle>DatePicker</DemoTitle>
       <DatePicker
         showTime
         onChange={(value) => {
@@ -28,7 +29,7 @@ export default () => {
         }}
         value={datePickerValue}
       />
-      <h3 className='m-title'>DatePicker.RangePicker</h3>
+      <DemoTitle>DatePicker.RangePicker</DemoTitle>
       <RangePicker
         showTime={{ format: 'HH:mm' }}
         format='YYYY-MM-DD HH:mm'

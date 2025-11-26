@@ -1,4 +1,5 @@
 import { ConfigProvider, Button, Switch, Input } from 'antd'
+import DemoTitle from '@/component/DemoTitle'
 
 
 export default () => {
@@ -6,7 +7,7 @@ export default () => {
   return (
     <>
       <div className='m-view'>
-        <h3 className='m-title'>局部主题</h3>
+        <DemoTitle>局部主题</DemoTitle>
         <ConfigProvider theme={{
           token: {
             colorPrimary: '#dc9a32'

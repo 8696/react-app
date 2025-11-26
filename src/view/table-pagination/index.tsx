@@ -1,6 +1,7 @@
 import './index.less'
 import { Table } from 'antd'
 import { useMemo } from 'react'
+import DemoTitle from '@/component/DemoTitle'
 export default () => {
   const columns = [
     {
@@ -28,7 +29,7 @@ export default () => {
   }, [])
   return (
     <div className='m-view'>
-      <h3 className='m-title'>Table pagination</h3>
+      <DemoTitle>Table pagination</DemoTitle>
       <Table
         columns={columns}
         key='key'

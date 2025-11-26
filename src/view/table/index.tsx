@@ -1,5 +1,6 @@
 import { Table, Input, Button } from 'antd'
 import { useState } from 'react'
+import DemoTitle from '@/component/DemoTitle'
 
 export default () => {
   const [dataSource, setDataSource] = useState([
@@ -39,7 +40,7 @@ export default () => {
 
   return (
     <div className='m-view'>
-      <h3 className='m-title'>Change row</h3>
+      <DemoTitle>Change row</DemoTitle>
       <Table
         style={{ width: '100%' }}
         scroll={{ x: 1200 }}

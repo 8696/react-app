@@ -2,6 +2,7 @@ import { theme, ColorPicker, Button, message, App, Modal } from 'antd'
 import { useEffect } from 'react'
 import Form from './form'
 import { useTheme } from '@/provider/theme'
+import DemoTitle from '@/component/DemoTitle'
 
 const { useToken } = theme
 export default () => {
@@ -20,11 +21,11 @@ export default () => {
   return (
     <>
       <div className='m-view'>
-        <h3 className='m-title'>动态设置</h3>
+        <DemoTitle>动态设置</DemoTitle>
         <Form/>
 
 
-        <h3 className='m-title'>message等静态方法消费context</h3>
+        <DemoTitle>message等静态方法消费context</DemoTitle>
         <span>使用 holderRender 给 message 、modal 、notification 静态方法设置 Provider</span>
         <br/>
         <br/>
@@ -61,7 +62,7 @@ export default () => {
         </div>
         <br/>
 
-        <h3 className='m-title'>设置主题</h3>
+        <DemoTitle>设置主题</DemoTitle>
 
         <div className='flex items-center'>
           <span>选择主颜色：</span>
@@ -98,7 +99,7 @@ export default () => {
             }}
           >设置圆角</Button>
         </div>
-        <h3 className='m-title'>CSS 变量</h3>
+        <DemoTitle>CSS 变量</DemoTitle>
 
         <div className=''>
           <div>

@@ -1,11 +1,12 @@
 import styles from './index.module.less'
+import DemoTitle from '@/component/DemoTitle'
 
 export default () => {
 
   return (
     <>
       <div className='m-view'>
-        <h3 className='m-title'>Design Var</h3>
+        <DemoTitle>Design Var</DemoTitle>
         <div>
           <div className={styles.colorPrimary}>
             使用 Design Token

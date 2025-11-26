@@ -1,4 +1,5 @@
 import { theme } from 'antd'
+import DemoTitle from '@/component/DemoTitle'
 
 export default () => {
 
@@ -7,7 +8,7 @@ export default () => {
   return (
     <>
       <div className='m-view'>
-        <h3 className='m-title'>Design Token</h3>
+        <DemoTitle>Design Token</DemoTitle>
         <div>
           <div
             style={{

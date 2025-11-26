@@ -1,12 +1,13 @@
 import './index.less'
 import LessModule from './component/less-module'
 import ScssModule from './component/scss-module'
+import DemoTitle from '@/component/DemoTitle'
 export default () => {
   return (
     <div className='m-view'>
-      <h3 className='m-title'>LessModule</h3>
+      <DemoTitle>LessModule</DemoTitle>
       <LessModule />
-      <h3 className='m-title'>ScssModule</h3>
+      <DemoTitle>ScssModule</DemoTitle>
       <ScssModule />
     </div>
   )

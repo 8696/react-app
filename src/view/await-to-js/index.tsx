@@ -2,6 +2,7 @@ import './index.less'
 import awaitToJs from 'await-to-js'
 import { Button } from 'antd'
 import { useMemoizedFn } from 'ahooks'
+import DemoTitle from '@/component/DemoTitle'
 
 export default () => {
   const getUserinfo = useMemoizedFn(() => {
@@ -14,7 +15,7 @@ export default () => {
   })
   return (
     <div className='m-view'>
-      <h3 className='m-title'>Await to js</h3>
+      <DemoTitle>Await to js</DemoTitle>
       <Button
         onClick={async () => {
           const [err, data] = await awaitToJs(getUserinfo())

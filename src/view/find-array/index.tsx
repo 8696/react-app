@@ -2,6 +2,7 @@ import './index.less'
 import { useMemo } from 'react'
 import { randomString } from '@/helper/utils'
 import { Button } from 'antd'
+import DemoTitle from '@/component/DemoTitle'
 
 export default () => {
 
@@ -36,7 +37,7 @@ export default () => {
 
   return (
     <div className='m-view'>
-      <h1 className='m-title'>Find array</h1>
+      <DemoTitle level={2}>Find array</DemoTitle>
       <Button
         onClick={() => {
           const t = new Date().getTime()

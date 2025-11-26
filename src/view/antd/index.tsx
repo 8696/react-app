@@ -2,18 +2,19 @@ import TreeSelect from './component/TreeSelect'
 import Cascader from './component/Cascader'
 import TreeSelect2 from './component/TreeSelect2'
 import Tree from './component/Tree'
+import DemoTitle from '@/component/DemoTitle'
 
 export default () => {
 
   return (
     <div className='m-view'>
-      <h3 className='m-title'>TreeSelect</h3>
+      <DemoTitle>TreeSelect</DemoTitle>
       <TreeSelect />
-      <h3 className='m-title'>Cascader</h3>
+      <DemoTitle>Cascader</DemoTitle>
       <Cascader />
-      <h3 className='m-title'>TreeSelect2</h3>
+      <DemoTitle>TreeSelect2</DemoTitle>
       <TreeSelect2 />
-      <h3 className='m-title'>Form Tree</h3>
+      <DemoTitle>Form Tree</DemoTitle>
       <Tree />
     </div>
   )

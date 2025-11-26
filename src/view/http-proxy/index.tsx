@@ -2,13 +2,14 @@ import './index.less'
 import { Button, Input } from 'antd'
 import axios from 'axios'
 import { useState } from 'react'
+import DemoTitle from '@/component/DemoTitle'
 export default () => {
   const [json, setJson] = useState<string>()
   const [path, setPath] = useState<string>('/url')
   const [loading, setLoading] = useState(false)
   return (
     <div className='m-view'>
-      <h3 className='m-title'>Http proxy</h3>
+      <DemoTitle>Http proxy</DemoTitle>
       <Input.Group compact>
         <Input
           style={{ width: 300 }}
