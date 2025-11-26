@@ -1,5 +1,5 @@
 import './index.less'
-import { Button, Input } from 'antd'
+import { Button, Input, Space } from 'antd'
 import axios from 'axios'
 import { useState } from 'react'
 import DemoTitle from '@/component/DemoTitle'
@@ -10,7 +10,7 @@ export default () => {
   return (
     <div className='m-view'>
       <DemoTitle>Http proxy</DemoTitle>
-      <Input.Group compact>
+      <Space.Compact>
         <Input
           style={{ width: 300 }}
           value={path}
@@ -34,9 +34,9 @@ export default () => {
         >
           Request
         </Button>
-      </Input.Group>
-      <br/>
-      <br/>
+      </Space.Compact>
+      <br />
+      <br />
       <pre>{json}</pre>
     </div>
   )

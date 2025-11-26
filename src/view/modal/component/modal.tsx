@@ -2,13 +2,13 @@ import { ReactNode, useEffect, useState } from 'react'
 
 export default (props: {
   children: ReactNode
-  visible: boolean
+  open: boolean
   afterCloseTime?: number
 }) => {
-  const [visible, setVisible] = useState(props.visible)
+  const [visible, setVisible] = useState(props.open)
   useEffect(() => {
     let timer: any
-    if (props.visible) {
+    if (props.open) {
       setVisible(true)
     } else {
       timer = setTimeout(() => {
@@ -16,7 +16,7 @@ export default (props: {
       }, props.afterCloseTime || 250)
     }
     return () => clearTimeout(timer)
-  }, [props.visible, props.afterCloseTime])
+  }, [props.open, props.afterCloseTime])
   return (
     <>{visible && props.children}</>
   )

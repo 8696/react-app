@@ -18,10 +18,10 @@ export default () => {
         setIsModalVisible2(true)
       }}>Open destroy modal</Button>
 
-      <Content visible={isModalVisible} close={() => setIsModalVisible(false)} />
+      <Content open={isModalVisible} close={() => setIsModalVisible(false)} />
 
-      <Model visible={isModalVisible2}>
-        <Content visible={isModalVisible2} close={() => setIsModalVisible2(false)} />
+      <Model open={isModalVisible2}>
+        <Content open={isModalVisible2} close={() => setIsModalVisible2(false)} />
       </Model>
     </div>
   )
