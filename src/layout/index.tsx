@@ -1,11 +1,7 @@
-import { Redirect } from 'react-router-dom'
-import { Switch, Route } from 'react-router-dom'
+import { Routes, Route, Navigate, NavLink, useLocation } from 'react-router-dom'
 import React from 'react'
 import './index.less'
 import nav from '../view/nav'
-
-import { useLocation } from 'react-router'
-import { NavLink } from 'react-router-dom'
 
 export default () => {
   const { pathname } = useLocation()
@@ -13,13 +9,13 @@ export default () => {
   return (
     <>
       <React.Suspense fallback={<></>}>
-        <Switch>
+        <Routes>
           {nav.map(item => (
-            <Route key={item.link} path={item.link} component={item.C} />
+            <Route key={item.link} path={`${item.link}/*`} element={<item.C />} />
           ))}
-          <Route exact path='*' render={() => <Redirect to='/404' />} />
-        </Switch>
-      </React.Suspense>
+          <Route path='*' element={<Navigate to='/404' replace />} />
+        </Routes>
+      </React.Suspense >
       {
         pathname !== '/home' && (
           <div style={{ position: 'fixed', bottom: '20px', right: '20px' }}>

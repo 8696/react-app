@@ -1,9 +1,9 @@
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { message } from 'antd'
 
 export default () => {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   useEffect(() => {
     message.error('Not Found.')
@@ -13,7 +13,7 @@ export default () => {
     <div>
       <span
         onClick={() => {
-          history.replace('/')
+          navigate('/', { replace: true })
         }}
       >
         404

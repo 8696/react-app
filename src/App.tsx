@@ -1,5 +1,5 @@
-import React, {} from 'react'
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import React, { } from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { ConfigProvider, App as AntdApp } from 'antd'
 import zhCN from 'antd/lib/locale/zh_CN'
 
@@ -36,11 +36,11 @@ export default () => {
           <AntdApp>
             <BrowserRouter>
               <React.Suspense fallback={<></>}>
-                <Switch>
-                  <Route exact path='/' render={() => <Redirect to='/home' />} />
-                  <Route exact path='/404' component={Error404} />
-                  <Route path='/' component={Layout} />
-                </Switch>
+                <Routes>
+                  <Route path='/' element={<Navigate to='/home' replace />} />
+                  <Route path='/404' element={<Error404 />} />
+                  <Route path='/*' element={<Layout />} />
+                </Routes>
               </React.Suspense>
             </BrowserRouter>
           </AntdApp>

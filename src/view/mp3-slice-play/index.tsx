@@ -286,7 +286,7 @@ export default function SegmentedMp3Player() {
     try {
       // 触发重新缓冲
       a.load()
-    } catch {}
+    } catch { }
 
     // 段内定位（防止越界）
     a.currentTime = Math.max(0, Math.min(localTimeSec, seg.duration || 0))
@@ -298,7 +298,7 @@ export default function SegmentedMp3Player() {
     // 在 canplay 后再 play（兼容性考虑）
     a.oncanplay = () => {
       // eslint-disable-next-line no-empty-function,@typescript-eslint/no-empty-function
-      if (autoplay) void a.play().catch(() => {})
+      if (autoplay) void a.play().catch(() => { })
     }
 
     // 预加载下一段（仅做 load 缓存，不作播放）
@@ -312,7 +312,7 @@ export default function SegmentedMp3Player() {
           next.src = nextUrl
           try {
             next.load()
-          } catch {}
+          } catch { }
         }
       }
     }
@@ -346,7 +346,7 @@ export default function SegmentedMp3Player() {
             try {
               // 仅做缓存，不会播放
               next.load()
-            } catch {}
+            } catch { }
           }
         }
       }
@@ -400,7 +400,7 @@ export default function SegmentedMp3Player() {
       // 防御性检查
       if (a) {
         // eslint-disable-next-line no-empty-function,@typescript-eslint/no-empty-function
-        void a.play().catch(() => {})
+        void a.play().catch(() => { })
       }
     }
   }

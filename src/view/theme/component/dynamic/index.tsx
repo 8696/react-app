@@ -6,7 +6,7 @@ import DemoTitle from '@/component/DemoTitle'
 
 const { useToken } = theme
 export default () => {
-  const { token  } = useToken()
+  const { token } = useToken()
 
 
   useEffect(() => {
@@ -22,13 +22,13 @@ export default () => {
     <>
       <div className='m-view'>
         <DemoTitle>动态设置</DemoTitle>
-        <Form/>
+        <Form />
 
 
         <DemoTitle>message等静态方法消费context</DemoTitle>
         <span>使用 holderRender 给 message 、modal 、notification 静态方法设置 Provider</span>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <div>
           <Button type='primary' onClick={() => {
             messageApi.open({
@@ -37,8 +37,8 @@ export default () => {
               duration: 10
             })
           }}>Hook方式调用message</Button>
-          <br/>
-          <br/>
+          <br />
+          <br />
           <Button type='primary' onClick={() => {
             // message.open({
             //   type: 'error',
@@ -51,8 +51,8 @@ export default () => {
             message.error('这个是直接使用静态方法调用但是也能应用ConfigProvider配置的效果，尝试设置主题error颜色试试icon的变化。https://ant-design.antgroup.com/components/config-provider-cn#config-provider-demo-holderrender')
             console.log(token.colorPrimary)
           }}>静态方法调用message</Button>
-          <br/>
-          <br/>
+          <br />
+          <br />
           <Button type='primary' onClick={() => {
             Modal.confirm({
               title: 'Do you want to delete these items?',
@@ -60,7 +60,7 @@ export default () => {
             })
           }}>静态方法调用modal</Button>
         </div>
-        <br/>
+        <br />
 
         <DemoTitle>设置主题</DemoTitle>
 
@@ -70,7 +70,7 @@ export default () => {
             updateToken?.({
               colorPrimary: '#' + value.toHex()
             })
-          }}/>
+          }} />
         </div>
         <div className='flex items-center'>
           <span>选择主hover颜色：</span>
@@ -78,7 +78,7 @@ export default () => {
             updateToken?.({
               colorPrimaryHover: '#' + value.toHex()
             })
-          }}/>
+          }} />
         </div>
         <div className='flex items-center'>
           <span>选择error颜色：</span>
@@ -86,9 +86,9 @@ export default () => {
             updateToken?.({
               colorError: '#' + value.toHex()
             })
-          }}/>
+          }} />
         </div>
-        <br/>
+        <br />
         <div className='flex items-center'>
           <Button
             type='primary'
