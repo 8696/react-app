@@ -6,7 +6,7 @@ const themeConfig: ThemeConfig = {
   },
   components: {
   },
-  cssVar: true
+  cssVar: { prefix: 'ant' }
 }
 
 export default themeConfig

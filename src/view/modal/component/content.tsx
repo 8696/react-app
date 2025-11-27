@@ -5,7 +5,7 @@ export default (props: { open: boolean, close: () => void }) => {
   return (
     <>
       <Modal
-        destroyOnClose
+        destroyOnHidden
         open={props.open}
         onCancel={props.close}
         onOk={props.close}

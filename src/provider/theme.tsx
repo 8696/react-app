@@ -67,7 +67,7 @@ export const ThemeProvider = (props: { children: React.ReactNode }) => {
 }
 
 
-export const useTheme =  (): TData => {
+export const useTheme = (): TData => {
 
   const context = useContext(Context)
   if (!context) {

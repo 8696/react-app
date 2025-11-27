@@ -112,7 +112,7 @@ export default () => {
             type='primary'
             onClick={() => {
               updateTheme?.({
-                cssVar: false
+                cssVar: undefined
               })
             }}
           >关闭css变量</Button>
@@ -121,7 +121,7 @@ export default () => {
             type='primary'
             onClick={() => {
               updateTheme?.({
-                cssVar: true
+                cssVar: { prefix: 'ant' }
               })
             }}
           >打开css变量</Button>
