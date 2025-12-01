@@ -5,8 +5,7 @@ const themeConfig: ThemeConfig = {
     borderRadius: 4
   },
   components: {
-  },
-  cssVar: { prefix: 'ant' }
+  }
 }
 
 export default themeConfig

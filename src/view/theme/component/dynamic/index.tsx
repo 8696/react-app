@@ -107,24 +107,6 @@ export default () => {
             &nbsp;
             <span style={{ color: 'var(--ant-color-error)' }}>--ant-color-error</span>
           </div>
-          <br />
-          <Button
-            type='primary'
-            onClick={() => {
-              updateTheme?.({
-                cssVar: undefined
-              })
-            }}
-          >关闭css变量</Button>
-          &nbsp;
-          <Button
-            type='primary'
-            onClick={() => {
-              updateTheme?.({
-                cssVar: { prefix: 'ant' }
-              })
-            }}
-          >打开css变量</Button>
         </div>
       </div>
     </>
