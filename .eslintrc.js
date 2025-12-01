@@ -228,7 +228,7 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/triple-slash-reference': 'off',
     // 允许使用 any
-    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-explicit-any': 'warn',
     // 关闭类型推断检查
     '@typescript-eslint/no-inferrable-types': 'off',
     // 允许出现空函数
