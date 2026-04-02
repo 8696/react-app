@@ -28,5 +28,6 @@ export default [
   { name: 'moment-to-day-js', link: '/moment-to-day-js', C: React.lazy(() => import('@/view/moment-to-day-js')) },
   { name: 'day-js-to-moment', link: '/day-js-to-moment', C: React.lazy(() => import('@/view/day-js-to-moment')) },
   { name: 'recorder', link: '/recorder', C: React.lazy(() => import('@/view/recorder')) },
-  { name: 'mp3-slice-play', link: '/mp3-slice-play', C: React.lazy(() => import('@/view/mp3-slice-play')) }
+  { name: 'mp3-slice-play', link: '/mp3-slice-play', C: React.lazy(() => import('@/view/mp3-slice-play')) },
+  { name: 'styled-components-demo', link: '/styled-components-demo', C: React.lazy(() => import('@/view/styled-components-demo')) }
 ]
