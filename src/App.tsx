@@ -26,8 +26,7 @@ const RenderConfigProvider = ({ children }: { children: React.ReactNode }) => {
 
 
 export default () => {
-  // console.log(process.env.REACT_APP_URL_API)
-  // console.log(process.env.REACT_APP_URL_API)
+  // console.log(import.meta.env.VITE_URL_API)
 
   return (
     <ThemeProvider>

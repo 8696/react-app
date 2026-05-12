@@ -1,6 +1,15 @@
-/// <reference types="node" />
-/// <reference types="react" />
-/// <reference types="react-dom" />
+/// <reference types="vite/client" />
+/// <reference types="vite-plugin-svgr/client" />
+
+interface ImportMetaEnv {
+  readonly VITE_URL_API: string
+  readonly VITE_CUSTOM_ENV: string
+  readonly VITE_CURRENT_ENV_FILE: string
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv
+}
 
 declare namespace NodeJS {
   interface ProcessEnv {
@@ -40,17 +49,6 @@ declare module '*.png' {
 }
 
 declare module '*.webp' {
-  const src: string
-  export default src
-}
-
-declare module '*.svg' {
-  import * as React from 'react'
-
-  export const ReactComponent: React.FunctionComponent<
-    React.SVGProps<SVGSVGElement> & { title?: string }
-  >
-
   const src: string
   export default src
 }
