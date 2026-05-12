@@ -12,7 +12,6 @@
     "build:production": "yarn eslint && vite build --mode production",
     "analyze": "cross-env ANALYZE=true vite build --mode production",
     "eslint": "cross-env NODE_ENV=production eslint --fix ./src",
-    "prepare": "husky install",
     "preview": "vite preview",
     "clear:package": "rm -rf ./node_modules && rm -rf dist && rm -rf coverage",
     "init:package": "yarn clear:package && yarn install",
@@ -21,13 +20,8 @@
     "ncu:check": "ncu --target minor -f 'antd,@ant-design/icons,@ant-design/cssinjs,ahooks'",
     "ncu:update": "ncu --target minor -u -f 'antd,@ant-design/icons,@ant-design/cssinjs,ahooks' && yarn install"
   },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": "yarn eslint"
-  },
   "dependencies": {
     "@ant-design/cssinjs": "^2.1.2",
-    "@commitlint/cli": "17.8.1",
-    "@commitlint/config-conventional": "17.8.1",
     "@types/node": "^22",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
@@ -42,9 +36,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^4.6.2",
     "fs-extra": "10.1.0",
-    "husky": "8.0.3",
     "less": "4.3.0",
-    "lint-staged": "12.5.0",
     "moment": "^2.30.1",
     "postcss": "8.5.6",
     "postcss-flexbugs-fixes": "5.0.2",
