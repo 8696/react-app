@@ -1,5 +1,6 @@
 import './index.less'
-import url, { ReactComponent as SVG } from './asset/icon.svg'
+import url from './asset/icon.svg'
+import SVG from './asset/icon.svg?react'
 import DemoTitle from '@/component/DemoTitle'
 export default () => {
 

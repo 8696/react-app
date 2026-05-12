@@ -12,19 +12,19 @@ const envCustomList = [
 ]
 /**
  * 自定义 ENV 值：
- * 1、REACT_APP_ 开头的可被浏览器读取，可通过 process.env.REACT_APP_xxx 获取
+ * 1、VITE_ 开头的可被浏览器读取，可通过 import.meta.env.VITE_xxx 获取
  * 2、数组索引对应的自定义环境列表
  * */
 const envCustomValue = {
-  REACT_APP_CURRENT_ENV_FILE: {
+  VITE_CURRENT_ENV_FILE: {
     comment: '当前运行使用env文件名称',
     values: [
-      '.env.custom.development',
-      '.env.custom.test',
-      '.env.custom.production'
+      '.env.development',
+      '.env.test',
+      '.env.production'
     ]
   },
-  REACT_APP_CUSTOM_ENV: {
+  VITE_CUSTOM_ENV: {
     comment: '自定义环境',
     values: [
       'development',
@@ -48,7 +48,7 @@ const envCustomValue = {
       'true'
     ]
   },
-  REACT_APP_URL_API: {
+  VITE_URL_API: {
     comment: '请求地址',
     values: [
       'http://development1.com',
@@ -68,11 +68,11 @@ const mkdirContent = (envIndex) => {
 }
 
 ;(async function() {
-  // 删除 .env.custom.xx 文件
+  // 删除 .env.development / .env.test / .env.production 文件
   const rootPathFileList = require('fs').readdirSync(path.resolve(__dirname, './'))
   for (let i = 0; i < rootPathFileList.length; i++) {
     const file = rootPathFileList[i]
-    if (/\.env\.custom\./.test(file)) {
+    if (/^\.env\.(development|test|production)$/.test(file)) {
       await fs.remove(path.resolve(__dirname, `./${file}`))
     }
   }
@@ -87,12 +87,10 @@ const mkdirContent = (envIndex) => {
   for (let i = 0; i < envCustomList.length; i++) {
     // 刷入 env 文件
     const envCustomItem = envCustomList[i]
-    await fs.outputFile(path.resolve(__dirname, `./.env.custom.${envCustomItem}`), mkdirContent(i))
+    await fs.outputFile(path.resolve(__dirname, `./.env.${envCustomItem}`), mkdirContent(i))
     // 暂存 script
-    scripts[`start:${envCustomItem}`]
-      = `cross-env CUSTOM_ENV=${envCustomItem} node scripts/start.js`
-    scripts[`build:${envCustomItem}`]
-      = `yarn eslint && cross-env CUSTOM_ENV=${envCustomItem} node scripts/build.js`
+    scripts[`start:${envCustomItem}`] = `vite --mode ${envCustomItem}`
+    scripts[`build:${envCustomItem}`] = `yarn eslint && vite build --mode ${envCustomItem}`
   }
   // 刷入 script
   packageData.scripts = {
@@ -104,4 +102,3 @@ const mkdirContent = (envIndex) => {
     JSON.stringify(packageData, null, '  ')
   )
 }())
-
