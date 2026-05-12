@@ -2,6 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { defineConfig, loadEnv, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
+import babel from '@rolldown/plugin-babel'
 import svgr from 'vite-plugin-svgr'
 import { visualizer } from 'rollup-plugin-visualizer'
 
@@ -26,20 +27,19 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [
-      react({
-        babel: {
-          plugins: [
-            [
-              'babel-plugin-styled-components',
-              {
-                displayName: true,
-                fileName: true,
-                meaninglessFileNames: ['index', 'styles'],
-                pure: true
-              }
-            ]
+      react(),
+      babel({
+        plugins: [
+          [
+            'babel-plugin-styled-components',
+            {
+              displayName: true,
+              fileName: true,
+              meaninglessFileNames: ['index', 'styles'],
+              pure: true
+            }
           ]
-        }
+        ]
       }),
       svgr(),
       isAnalyze && visualizer({ open: true, filename: 'dist/stats.html' }),
